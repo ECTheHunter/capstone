@@ -129,60 +129,13 @@ GameObject:
   m_Component:
   - component: {fileID: 64188961}
   - component: {fileID: 64188960}
-  - component: {fileID: 64188959}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!61 &64188959
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64188958}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!212 &64188960
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -250,7 +203,8 @@ Transform:
   m_LocalPosition: {x: 0.11, y: -0.46, z: 0}
   m_LocalScale: {x: 6.9424, y: 5.1889, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1951211234}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450077954
@@ -299,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAQIexWLCgsXQIAABQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3GJoSU3lpDSA8kTGgnF1+EtMYaZMmjjwDJ8N+7km3s0ukJ8d7b3berlT+JULYG5rRZGsFXmgP5NiLhTL6MevIJjnSn1UZ8QKd5E9yVQUSj5pU6oRFPQ5jVFTgj2He1k0GcIOiVKLSpFnwHmbbOIlxQaQEpo12IVgh9jsgRf25mIeSEp/FDOH3gaZaMznhkoByYXtoJO1mj8opJWtXAg+VePL5r1WkjU9hMqwjGmZZS2NYJcac6dprR2nrsAwVcUOwslk9v03tEShC70oXUw/iXorDgWleGnubC4IyaxOSHbgZXUbtvrL1T6UOp6SS6anKu/qFv0kgXRldPXdk0CSVcKdj+lZ4YtW4w2CE8H1iPAzpQuadbCW8lqGe9NNorjqQzPoR6C+N5//fSWVYC2/d4Y/UK9PX/ryf0cI7NHzMpqm2gbicNsJE6TjxePhi8m59oOK6GbVMgGlz8tvCL7oY71BKPwliHVNulCva22psgJYs4s9CNd5k2CiLcmq5BUelOa0zjrm/wihuUvWIeaXgtbfGW6x7BVUiEe32SXFFrfbhcli31YQW2fPFOCgW96UA845wyrVSzYMOZdGEbbwrKBmE7L/jfq0XoPU/5w4xNJpNxMk7Tm7vk63SKyPZhVqQJ25K4e0Jhn1SuG6PtePDWVJ9c4Z51H5HR0tA6Ljs39LAUH5UejFyoQm+YAVAvTYaLcTBYBN8lX3CBA9qAc0LF+yafOZGa7YHnl0R57HRxdIbmfZac1OJdu4DkJItfjZwE+LLLawPvAg6heJfsTM5/AFBLAwQUAAAICAAAECHszJKUM2wAAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0UqJpimGKuWWyiYmJkYGRoaGusYGFmRlQJMncMs3QIDlJKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAAAQIexWLCgsXQIAABQFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAQIezMkpQzbAAAAHgAAAAJACQAAAAAAAAAAAAAAKoCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAYQMAAAAA
+    dataString: UEsDBBQAAAgIAAAQIew9uZWwWAIAABIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE2P2jAQ/SvI57JKKAultxZYtgcWtGy1l1yMPSEWjh3ZDp/iv3fsJCSl6gnz3puZN+NxrkQoWwBz2iyM4EvNgXzvEX8mX3ot+QonutNqIy7QaD4Fd5kX0aB5p05oxGMfZnUOzgj2Q+2kF0cIlkqk2uRzvoOpts4inFJpASmjnY9WCF175IQ//YkPOeNpMPanC54mUe+GRwbKgWmljbCRVapSMUnzAri33IoHz7U6rmQKm6kV0ZPnmJZS2NoLceci9PpOz75TLij2FYrHTyFVBmKXOZ+4G7tKUwuu9mToeSYMTqhKSn7qamw5tfvK2IHK0pcZDYOnKufyH7ofBzo1On9tysaRL+EywfbokVHrOmPtwrOO9TCeI5V7upXwmYF60wujS8WRdKb0oaWFwaz9e+9smgHbt3hl9QEsi/9fju/hFpo/TaXIt2HuwwrYSB2mHa4eDN7MLzQcFsPWKRD1Ln5b+KC77gbVxIsw1iFVd6m8va0ujZeSeZiZ76Z0U20UBLg2XYCi0p3XmMY93uAD1yn7wLxQ/1bq4jXXPIGHkAC3+ih6oNb6eL8sm+njEmy2Kp0UClrTnnjDOU21UtWCdWfShG1Kk1LWCduVgv+9WoQ+85iPJ2w4HA6iQRz3v0bfRiNEtuNJGkdsS8LuCYV9UrmujNbjwVtTbXKFe9Z8QnoLQ4uw7NzQ40Jcct0ZuVCp3jADoFZVhrtxMFgEXyWfc4ED2oBzQoX7JteESM32wJN7oiR0Oj85Q5M2S0IKcdDOIwmZhm9GQjx83+W1gYOAoy/eJLuR2x9QSwMEFAAACAgAABAh7MySlDNsAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tFKiaYphirllsomJiZGBkaGhrrGBhZkZUCTJ3DLN0CA5SSkWqL6ksiDVLzE3FaInILEkIy0zLyUzL13PvSgzxR1ktFJsLQBQSwECLQAUAAAICAAAECHsPbmVsFgCAAASBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAECHszJKUM2wAAAB4AAAACQAkAAAAAAAAAAAAAAClAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAFwDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -327,11 +281,43 @@ MonoBehaviour:
     _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
     _AreaColors:
     - {r: 0, g: 0, b: 0, a: 0}
-  tagNames: []
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -856,6 +842,7 @@ GameObject:
   - component: {fileID: 1231296598}
   - component: {fileID: 1231296596}
   - component: {fileID: 1231296595}
+  - component: {fileID: 1231296601}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -911,10 +898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a89ecf6d3608a4a87f205277b441b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 3
+  movespeed: 450
   target: {fileID: 1653493470}
   health: 3
   damage: 3
+  nextpointdistance: 1
+  reachedpath: 0
 --- !u!114 &1231296598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -929,7 +918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   drawGizmos: 1
-  detailedGizmos: 0
+  detailedGizmos: 1
   startEndModifier:
     addPoints: 0
     exactStartPoint: 3
@@ -1007,12 +996,39 @@ Transform:
   m_GameObject: {fileID: 1231296594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.92, y: 0.9213045, z: 0}
+  m_LocalPosition: {x: -10.27, y: 2.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1231296601
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231296594}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 5
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1269462764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1239,84 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1951211233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1951211234}
+  - component: {fileID: 1951211235}
+  m_Layer: 6
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1951211234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951211233}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 64188961}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1951211235
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951211233}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.2, y: 1.2}
+  m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
