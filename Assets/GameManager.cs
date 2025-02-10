@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public int healthvalue;
+    public float healthvalue;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

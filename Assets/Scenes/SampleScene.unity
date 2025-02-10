@@ -854,7 +854,6 @@ GameObject:
   - component: {fileID: 1231296600}
   - component: {fileID: 1231296599}
   - component: {fileID: 1231296598}
-  - component: {fileID: 1231296597}
   - component: {fileID: 1231296596}
   - component: {fileID: 1231296595}
   m_Layer: 0
@@ -914,48 +913,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 3
   target: {fileID: 1653493470}
---- !u!114 &1231296597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231296594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 5
-  radius: 0.5
-  height: 2
-  canMove: 1
-  maxSpeed: 1
-  gravity: {x: 0, y: 0, z: 0}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  centerOffsetCompatibility: NaN
-  repathRateCompatibility: NaN
-  canSearchCompability: 0
-  orientation: 1
-  enableRotation: 1
-  autoRepath:
-    mode: 2
-    interval: 0.5
-    sensitivity: 10
-    maximumInterval: 2
-    visualizeSensitivity: 0
-  targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
-  rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 2
-  endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
-  slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
-  constrainInsideGraph: 0
+  health: 3
+  damage: 3
 --- !u!114 &1231296598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,7 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffa98bb0d6ed9f488c6577203378e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthvalue: 0
+  healthvalue: 3
 --- !u!4 &1269462766
 Transform:
   m_ObjectHideFlags: 0
@@ -1111,9 +1070,10 @@ GameObject:
   - component: {fileID: 1653493469}
   - component: {fileID: 1653493471}
   - component: {fileID: 1653493472}
+  - component: {fileID: 1653493473}
   m_Layer: 0
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1218,7 +1178,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1236,6 +1196,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562a7e26f03d5e34c86e8a5d2fe89a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1653493473
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653493468}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
