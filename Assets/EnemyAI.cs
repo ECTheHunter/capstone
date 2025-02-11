@@ -63,6 +63,13 @@ public class EnemyAI : MonoBehaviour
         }
 
     }
+    void Update()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -70,5 +77,9 @@ public class EnemyAI : MonoBehaviour
             collision.gameObject.GetComponent<Health>().DoDamage(damage);
             Destroy(gameObject);
         }
+    }
+    public void EatDamage(float damage)
+    {
+        health -= damage;
     }
 }
