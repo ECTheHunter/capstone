@@ -21,6 +21,7 @@ public class EnemyAI : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, 0.5f);
         Physics2D.IgnoreLayerCollision(0, 6);
+        target = GameManager.Instance.player.transform;
 
     }
     private void UpdatePath()

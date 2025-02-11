@@ -3,7 +3,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public float healthvalue;
+    [SerializeField] public float healthvalue;
+    [SerializeField] public GameObject player;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +18,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(this);
+    
     }
 
     // Update is called once per frame
