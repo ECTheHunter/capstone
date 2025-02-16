@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public float healthvalue;
     public GameObject player;
     public float damage;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
