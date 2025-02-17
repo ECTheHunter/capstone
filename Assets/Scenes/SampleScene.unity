@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &59328184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 706512735265388796, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+  m_PrefabInstance: {fileID: 1995722058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &64188958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1184,6 @@ MonoBehaviour:
   healthvalue: 3
   player: {fileID: 0}
   damage: 1
-  bouncerPrefab: {fileID: 0}
 --- !u!4 &1269462766
 Transform:
   m_ObjectHideFlags: 0
@@ -1512,6 +1516,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!4 &1806175074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4921033655362007903, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+  m_PrefabInstance: {fileID: 1995722058}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1951211233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,6 +1607,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 585289459784939071, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3625043607559282579, guid: 045b15ec09bba42448d89db77fa6f20a, type: 3}
     - target: {fileID: 844813877060026788, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.38093
@@ -1642,6 +1655,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouncer
       objectReference: {fileID: 0}
+    - target: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: spawnpoint1
+      value: 
+      objectReference: {fileID: 59328184}
+    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: spawnpoint2
+      value: 
+      objectReference: {fileID: 1806175074}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
