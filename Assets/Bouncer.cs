@@ -15,12 +15,18 @@ public class Bouncer : MonoBehaviour
     [SerializeField] private GameObject bouncerPrefab;
     [SerializeField] private Transform spawnpoint1;
     [SerializeField] private Transform spawnpoint2;
+    [SerializeField] private bool isminion;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        float angle = Random.Range(-45f, 45f);
-        direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+        if (!isminion)
+        {
+            float angle = Random.Range(-1f, 1f);
+            angle += transform.rotation.z;
+            direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+        }
+
         Physics2D.IgnoreLayerCollision(7, 6);
         Physics2D.IgnoreLayerCollision(7, 7);
         rb2D = GetComponent<Rigidbody2D>();
@@ -29,7 +35,7 @@ public class Bouncer : MonoBehaviour
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 5f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 3f);
         Debug.DrawRay(transform.position, direction);
         if (hit.collider == null)
         {
@@ -89,14 +95,19 @@ public class Bouncer : MonoBehaviour
         }
 
         GameObject newBouncer1 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
-
+        GameObject newBouncer2 = Instantiate(bouncerPrefab, (Vector2)spawnpoint2.position, Quaternion.identity);
 
         Bouncer bouncerScript1 = newBouncer1.GetComponent<Bouncer>();
-     
-        float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-15f, 15f);
+        Bouncer bouncerScript2 = newBouncer2.GetComponent<Bouncer>();
 
-
+        // Set the direction of the new bouncers within -45 to 45 degrees
+        float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-45f, 45f);
+        float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-45f, 45f);
+        bouncerScript1.isminion = true;
+        bouncerScript2.isminion = true;
         bouncerScript1.SetDirection(new Vector2(Mathf.Cos(angle1 * Mathf.Deg2Rad), Mathf.Sin(angle1 * Mathf.Deg2Rad)).normalized);
+        bouncerScript2.SetDirection(new Vector2(Mathf.Cos(angle2 * Mathf.Deg2Rad), Mathf.Sin(angle2 * Mathf.Deg2Rad)).normalized);
+
 
         Destroy(gameObject);
         yield return null;
