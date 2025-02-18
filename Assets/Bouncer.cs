@@ -22,9 +22,9 @@ public class Bouncer : MonoBehaviour
     {
         if (!isminion)
         {
-            float angle = Random.Range(-1f, 1f);
-            angle += transform.rotation.z;
-            direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
+            float angleOffset = Random.Range(-45f, 45f); // Random offset within -45 to 45 degrees
+            direction = Quaternion.Euler(0, 0, angleOffset) * transform.right; // Use transform.right as the base direction
+            direction = direction.normalized;
         }
 
         Physics2D.IgnoreLayerCollision(7, 6);
