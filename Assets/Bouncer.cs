@@ -29,7 +29,7 @@ public class Bouncer : MonoBehaviour
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 5f);
         Debug.DrawRay(transform.position, direction);
         if (hit.collider == null)
         {
@@ -73,9 +73,7 @@ public class Bouncer : MonoBehaviour
                     var collisionNormal = ((Vector2)transform.position - firstcontact).normalized;
                     Vector2 newVelocity = Vector2.Reflect(rb2D.linearVelocity.normalized, collisionNormal).normalized;
                     direction = newVelocity;
-                    float angle = Mathf.Atan2(rb2D.linearVelocityY, rb2D.linearVelocityX) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                    StartCoroutine(BounceOperation(newVelocity));
+                    StartCoroutine(BounceOperation());
                 }
 
 
@@ -83,20 +81,22 @@ public class Bouncer : MonoBehaviour
         }
 
     }
-    IEnumerator BounceOperation(Vector2 newVelocity)
+    IEnumerator BounceOperation()
     {
-
         while (cansplit)
         {
             yield return null;
         }
+
         GameObject newBouncer1 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
-        GameObject newBouncer2 = Instantiate(bouncerPrefab, (Vector2)spawnpoint2.position, Quaternion.identity);
+
 
         Bouncer bouncerScript1 = newBouncer1.GetComponent<Bouncer>();
-        Bouncer bouncerScript2 = newBouncer2.GetComponent<Bouncer>();
-        bouncerScript1.SetDirection(newVelocity + new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f)));
-        bouncerScript2.SetDirection(newVelocity + new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f)));
+     
+        float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-15f, 15f);
+
+
+        bouncerScript1.SetDirection(new Vector2(Mathf.Cos(angle1 * Mathf.Deg2Rad), Mathf.Sin(angle1 * Mathf.Deg2Rad)).normalized);
 
         Destroy(gameObject);
         yield return null;

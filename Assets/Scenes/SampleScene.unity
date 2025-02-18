@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 210431839}
   - component: {fileID: 210431838}
   - component: {fileID: 210431840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Border (1)
   m_TagString: Border
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 219952980}
   - component: {fileID: 219952979}
   - component: {fileID: 219952981}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Border (3)
   m_TagString: Border
   m_Icon: {fileID: 0}
@@ -854,7 +854,7 @@ GameObject:
   - component: {fileID: 842755873}
   - component: {fileID: 842755872}
   - component: {fileID: 842755874}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Border (2)
   m_TagString: Border
   m_Icon: {fileID: 0}
@@ -1256,7 +1256,7 @@ GameObject:
   - component: {fileID: 1543504198}
   - component: {fileID: 1543504197}
   - component: {fileID: 1543504199}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Border
   m_TagString: Border
   m_Icon: {fileID: 0}
@@ -1613,11 +1613,11 @@ PrefabInstance:
       objectReference: {fileID: 3625043607559282579, guid: 045b15ec09bba42448d89db77fa6f20a, type: 3}
     - target: {fileID: 844813877060026788, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.38093
+      value: 5.35
       objectReference: {fileID: 0}
     - target: {fileID: 844813877060026788, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8513938
+      value: 2.83
       objectReference: {fileID: 0}
     - target: {fileID: 844813877060026788, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_LocalPosition.z
