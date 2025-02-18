@@ -19,7 +19,8 @@ public class Bouncer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+        float angle = Random.Range(-45f, 45f);
+        direction = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)).normalized;
         Physics2D.IgnoreLayerCollision(7, 6);
         Physics2D.IgnoreLayerCollision(7, 7);
         rb2D = GetComponent<Rigidbody2D>();
