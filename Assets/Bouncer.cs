@@ -35,7 +35,7 @@ public class Bouncer : MonoBehaviour
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 3f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 2f);
         Debug.DrawRay(transform.position, direction);
         if (hit.collider == null)
         {
@@ -96,7 +96,8 @@ public class Bouncer : MonoBehaviour
 
         GameObject newBouncer1 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
         GameObject newBouncer2 = Instantiate(bouncerPrefab, (Vector2)spawnpoint2.position, Quaternion.identity);
-
+        newBouncer1.transform.localScale = transform.localScale * splitfactor;
+        newBouncer2.transform.localScale = transform.localScale * splitfactor;
         Bouncer bouncerScript1 = newBouncer1.GetComponent<Bouncer>();
         Bouncer bouncerScript2 = newBouncer2.GetComponent<Bouncer>();
 
