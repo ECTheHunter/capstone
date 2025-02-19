@@ -16,6 +16,8 @@ public class Bouncer : MonoBehaviour
     [SerializeField] private Transform spawnpoint1;
     [SerializeField] private Transform spawnpoint2;
     [SerializeField] private bool isminion;
+    [SerializeField] private float detectiondistance;
+    [SerializeField] private float minumumscale;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +37,7 @@ public class Bouncer : MonoBehaviour
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 2f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectiondistance);
         Debug.DrawRay(transform.position, direction);
         if (hit.collider == null)
         {
@@ -96,10 +98,25 @@ public class Bouncer : MonoBehaviour
 
         GameObject newBouncer1 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
         GameObject newBouncer2 = Instantiate(bouncerPrefab, (Vector2)spawnpoint2.position, Quaternion.identity);
-        newBouncer1.transform.localScale = transform.localScale * splitfactor;
-        newBouncer2.transform.localScale = transform.localScale * splitfactor;
         Bouncer bouncerScript1 = newBouncer1.GetComponent<Bouncer>();
         Bouncer bouncerScript2 = newBouncer2.GetComponent<Bouncer>();
+        if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude)
+        {
+            newBouncer1.transform.localScale = transform.localScale * splitfactor;
+            newBouncer2.transform.localScale = transform.localScale * splitfactor;
+            bouncerScript1.movespeed = movespeed * (1 + (1 - splitfactor));
+            bouncerScript2.movespeed = movespeed * (1 + (1 - splitfactor));
+            bouncerScript1.health = health * splitfactor;
+            bouncerScript2.health = health * splitfactor;
+            bouncerScript1.damage = damage * splitfactor;
+            bouncerScript2.damage = damage * splitfactor;
+            bouncerScript1.detectiondistance = detectiondistance * splitfactor;
+            bouncerScript2.detectiondistance = detectiondistance * splitfactor;
+
+
+        }
+
+
 
         // Set the direction of the new bouncers within -45 to 45 degrees
         float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-45f, 45f);

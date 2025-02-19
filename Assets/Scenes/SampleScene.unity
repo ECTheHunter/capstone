@@ -1660,6 +1660,18 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: movespeed
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: spawnpoint1
       value: 
       objectReference: {fileID: 59328184}
@@ -1669,7 +1681,15 @@ PrefabInstance:
       objectReference: {fileID: 1806175074}
     - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: splitfactor
-      value: 0.9
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: minumumscale
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: detectiondistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
