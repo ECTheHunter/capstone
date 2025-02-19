@@ -14,7 +14,6 @@ public class Bouncer : MonoBehaviour
     [SerializeField] private bool cansplit = false;
     [SerializeField] private GameObject bouncerPrefab;
     [SerializeField] private Transform spawnpoint1;
-    [SerializeField] private Transform spawnpoint2;
     [SerializeField] private bool isminion;
     [SerializeField] private float detectiondistance;
     [SerializeField] private float minumumscale;
@@ -24,7 +23,7 @@ public class Bouncer : MonoBehaviour
     {
         if (!isminion)
         {
-            float angleOffset = Random.Range(-45f, 45f); // Random offset within -45 to 45 degrees
+            float angleOffset = Random.Range(-30f, 30f); // Random offset within -45 to 45 degrees
             direction = Quaternion.Euler(0, 0, angleOffset) * transform.right; // Use transform.right as the base direction
             direction = direction.normalized;
         }
@@ -81,7 +80,8 @@ public class Bouncer : MonoBehaviour
                     var collisionNormal = ((Vector2)transform.position - firstcontact).normalized;
                     Vector2 newVelocity = Vector2.Reflect(rb2D.linearVelocity.normalized, collisionNormal).normalized;
                     direction = newVelocity;
-                    StartCoroutine(BounceOperation());
+                    if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude)
+                        StartCoroutine(BounceOperation());
                 }
 
 
@@ -97,30 +97,28 @@ public class Bouncer : MonoBehaviour
         }
 
         GameObject newBouncer1 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
-        GameObject newBouncer2 = Instantiate(bouncerPrefab, (Vector2)spawnpoint2.position, Quaternion.identity);
+        GameObject newBouncer2 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
         Bouncer bouncerScript1 = newBouncer1.GetComponent<Bouncer>();
         Bouncer bouncerScript2 = newBouncer2.GetComponent<Bouncer>();
-        if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude)
-        {
-            newBouncer1.transform.localScale = transform.localScale * splitfactor;
-            newBouncer2.transform.localScale = transform.localScale * splitfactor;
-            bouncerScript1.movespeed = movespeed * (1 + (1 - splitfactor));
-            bouncerScript2.movespeed = movespeed * (1 + (1 - splitfactor));
-            bouncerScript1.health = health * splitfactor;
-            bouncerScript2.health = health * splitfactor;
-            bouncerScript1.damage = damage * splitfactor;
-            bouncerScript2.damage = damage * splitfactor;
-            bouncerScript1.detectiondistance = detectiondistance * splitfactor;
-            bouncerScript2.detectiondistance = detectiondistance * splitfactor;
 
 
-        }
+        newBouncer1.transform.localScale = transform.localScale * splitfactor;
+        newBouncer2.transform.localScale = transform.localScale * splitfactor;
+        bouncerScript1.movespeed = movespeed * (1 + (1 - splitfactor));
+        bouncerScript2.movespeed = movespeed * (1 + (1 - splitfactor));
+        bouncerScript1.health = health * splitfactor;
+        bouncerScript2.health = health * splitfactor;
+        bouncerScript1.damage = damage * splitfactor;
+        bouncerScript2.damage = damage * splitfactor;
+
+
+
 
 
 
         // Set the direction of the new bouncers within -45 to 45 degrees
-        float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-45f, 45f);
-        float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-45f, 45f);
+        float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-30f, 30f);
+        float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-30f, 30f);
         bouncerScript1.isminion = true;
         bouncerScript2.isminion = true;
         bouncerScript1.SetDirection(new Vector2(Mathf.Cos(angle1 * Mathf.Deg2Rad), Mathf.Sin(angle1 * Mathf.Deg2Rad)).normalized);
