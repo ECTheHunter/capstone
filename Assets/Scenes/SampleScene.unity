@@ -1599,11 +1599,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 844813877060026788, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.44
+      value: -7.32
       objectReference: {fileID: 0}
     - target: {fileID: 844813877060026788, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.65
+      value: 7.19
       objectReference: {fileID: 0}
     - target: {fileID: 844813877060026788, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1640,10 +1640,6 @@ PrefabInstance:
     - target: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_Name
       value: Bouncer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
-      propertyPath: minumumscale
-      value: 0.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
