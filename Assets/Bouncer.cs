@@ -89,6 +89,13 @@ public class Bouncer : MonoBehaviour
         }
 
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player"){
+            collision.gameObject.GetComponent<Health>().DoDamage(damage);
+            Destroy(gameObject);
+        }
+    }
     IEnumerator BounceOperation()
     {
         while (cansplit)
