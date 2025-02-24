@@ -42,7 +42,7 @@ public class Bouncer : MonoBehaviour
         {
             cansplit = false;
         }
-        if (hit.collider.tag == "Border")
+        if (hit.collider != null && hit.collider.tag == "Border")
         {
             cansplit = true;
         }
