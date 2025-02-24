@@ -19,10 +19,10 @@ public class InputHandler : MonoBehaviour
         {
             return;
         }
-        Collider2D hit = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        if (hit != null && hit.CompareTag("Enemy"))
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (hit.collider.gameObject.tag == "Enemy")
         {
-            hit.GetComponent<EnemyAI>().EatDamage(GameManager.Instance.damage);
+            hit.collider.gameObject.GetComponent<EnemyAI>().EatDamage(GameManager.Instance.damage);
         }
     }
 }

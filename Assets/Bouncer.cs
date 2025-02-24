@@ -36,7 +36,10 @@ public class Bouncer : MonoBehaviour
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectiondistance);
+
+        int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, ignoreEnemyLayer);
+
         Debug.DrawRay(transform.position, direction);
         if (hit.collider == null)
         {
@@ -91,7 +94,8 @@ public class Bouncer : MonoBehaviour
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player"){
+        if (collision.gameObject.tag == "Player")
+        {
             collision.gameObject.GetComponent<Health>().DoDamage(damage);
             Destroy(gameObject);
         }
