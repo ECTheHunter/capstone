@@ -36,7 +36,7 @@ public class Bouncer : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, ignoreEnemyLayer);
+         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);
 
         Debug.DrawRay(transform.position, direction);
         if (hit.collider == null)
@@ -51,7 +51,7 @@ public class Bouncer : MonoBehaviour
         {
             cansplit = false;
         }
-
+       
     }
     // Update is called once per frame
     void FixedUpdate()
