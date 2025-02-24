@@ -6,8 +6,6 @@ public class EnemyAI : MonoBehaviour
     private Path path;
     [SerializeField] private float movespeed;
     [SerializeField] private Transform target;
-    [SerializeField] private float health;
-    [SerializeField] private float damage;
     [SerializeField] private float nextpointdistance;
     private int currentwaypoint = 0;
     public bool reachedpath = false;
@@ -66,7 +64,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     {
-        if (health <= 0)
+        if (GetComponent<EnemyValues>().health <= 0)
         {
             Destroy(gameObject);
         }
@@ -75,12 +73,9 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Health>().DoDamage(damage);
+            collision.gameObject.GetComponent<Health>().DoDamage(GetComponent<EnemyValues>().damage);
             Destroy(gameObject);
         }
     }
-    public void EatDamage(float damage)
-    {
-        health -= damage;
-    }
+ 
 }

@@ -22,7 +22,7 @@ public class InputHandler : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (hit.collider.gameObject.tag == "Enemy")
         {
-            hit.collider.gameObject.GetComponent<EnemyAI>().EatDamage(GameManager.Instance.damage);
+            hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
         }
     }
 }

@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7329265040855223371}
   - component: {fileID: 746952039860033686}
   - component: {fileID: 7765563836872619277}
+  - component: {fileID: 6074380613516990628}
   m_Layer: 7
   m_Name: Bouncer
   m_TagString: Enemy
@@ -135,9 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enteredscene: 0
-  damage: 15
   movespeed: 350
-  health: 8
   splitfactor: 0.8
   cansplit: 0
   bouncerPrefab: {fileID: 4913959121887310431}
@@ -208,3 +207,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6074380613516990628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913959121887310431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dcd55cf7926b7d4e8f03dbb008a5106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  damage: 3

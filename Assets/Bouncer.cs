@@ -5,9 +5,7 @@ using UnityEngine;
 public class Bouncer : MonoBehaviour
 {
     [SerializeField] private bool enteredscene = false;
-    [SerializeField] private float damage;
     [SerializeField] private float movespeed;
-    [SerializeField] private float health;
     private Rigidbody2D rb2D;
     [SerializeField] private float splitfactor;
     private Vector2 direction;
@@ -96,7 +94,7 @@ public class Bouncer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Health>().DoDamage(damage);
+            collision.gameObject.GetComponent<Health>().DoDamage(GetComponent<EnemyValues>().damage);
             Destroy(gameObject);
         }
     }
@@ -111,16 +109,18 @@ public class Bouncer : MonoBehaviour
         GameObject newBouncer2 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
         Bouncer bouncerScript1 = newBouncer1.GetComponent<Bouncer>();
         Bouncer bouncerScript2 = newBouncer2.GetComponent<Bouncer>();
+        EnemyValues enemyValues1 = newBouncer1.GetComponent<EnemyValues>();
+        EnemyValues enemyValues2 = newBouncer2.GetComponent<EnemyValues>();
 
 
         newBouncer1.transform.localScale = transform.localScale * splitfactor;
         newBouncer2.transform.localScale = transform.localScale * splitfactor;
         bouncerScript1.movespeed = movespeed * (1 + (1 - splitfactor));
         bouncerScript2.movespeed = movespeed * (1 + (1 - splitfactor));
-        bouncerScript1.health = health * splitfactor;
-        bouncerScript2.health = health * splitfactor;
-        bouncerScript1.damage = damage * splitfactor;
-        bouncerScript2.damage = damage * splitfactor;
+        enemyValues1.health = GetComponent<EnemyValues>().health * splitfactor;
+        enemyValues2.health = GetComponent<EnemyValues>().health * splitfactor;
+        enemyValues1.damage = GetComponent<EnemyValues>().damage * splitfactor;
+        enemyValues2.damage = GetComponent<EnemyValues>().damage * splitfactor;
 
 
 
