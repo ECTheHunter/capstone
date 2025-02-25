@@ -51,6 +51,9 @@ public class Bouncer : MonoBehaviour
         {
             cansplit = false;
         }
+        if(GetComponent<EnemyValues>().health <= 0){
+            Destroy(gameObject);
+        }
        
     }
     // Update is called once per frame
