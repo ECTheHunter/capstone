@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public float damage;
     public int weaponmode = 0;
+    public float machinegunfirerate;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

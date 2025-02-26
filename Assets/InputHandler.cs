@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
+    private float timestamp;
     void Update()
     {
 
@@ -9,7 +10,7 @@ public class InputHandler : MonoBehaviour
         {
             GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Pistolmode;
         }
-         if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Machinegunmode;
         }
@@ -32,7 +33,16 @@ public class InputHandler : MonoBehaviour
         {
             if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Machinegunmode)
             {
-                print("hold");
+                if (Time.time > timestamp)
+                {
+                    timestamp = Time.time + GameManager.Instance.machinegunfirerate;
+                    LayerMask enemyLayer = LayerMask.GetMask("Enemy");
+                    RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
+                    if (hit.collider.gameObject.tag == "Enemy")
+                    {
+                        hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
+                    }
+                }
             }
         }
     }
