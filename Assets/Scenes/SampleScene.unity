@@ -1120,6 +1120,8 @@ MonoBehaviour:
   healthvalue: 3
   player: {fileID: 0}
   damage: 1
+  weaponmode: 0
+  machinegunfirerate: 1
 --- !u!4 &1269462766
 Transform:
   m_ObjectHideFlags: 0
