@@ -1,46 +1,20 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 public class InputHandler : MonoBehaviour
 {
-    public bool holding;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
-    {
-        PlayerActions controls = new PlayerActions();
-        //controls.Gameplay.Hold.performed += OnHold;
-        //controls.Gameplay.Hold.canceled += OnHoldCanceled;
-
-    }
-
-    private void OnHoldCanceled(InputAction.CallbackContext context)
-    {
-        holding = true;
-    }
-
-    private void OnHold(InputAction.CallbackContext context)
-    {
-        holding = false;
-    }
-
-    // Update is called once per frame
+    public int count;
     void Update()
     {
-        if (holding)
+
+        if (Input.GetMouseButtonDown(0))
         {
-            print("holding");
-        }
-    }
-    public void OnClick(InputAction.CallbackContext context)
-    {
-        if (!context.started)
-        {
-            return;
-        }
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        if (hit.collider.gameObject.tag == "Enemy")
-        {
-            hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
+            LayerMask enemyLayer = LayerMask.GetMask("Enemy");
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
+            print(hit.collider.gameObject.name);
+            if (hit.collider.gameObject.tag == "Enemy")
+            {
+                hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
+            }
         }
     }
 }
