@@ -478,7 +478,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -1115,6 +1115,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c1b9c5db-d255-4efd-ad91-593552b5d5ee
     m_ActionName: 'Gameplay/Click[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 17542b38-a918-4471-bc79-1434ec435535
+    m_ActionName: 'Gameplay/Hold[/Mouse/leftButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -1147,6 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd87d464b0caee64abd6f2a197b8ff1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holding: 0
 --- !u!1 &1269462764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1706,10 @@ PrefabInstance:
     - target: {fileID: 5369148182082062074, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218743728456602720, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
+      propertyPath: m_Radius
+      value: 0.55
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

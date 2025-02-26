@@ -1,17 +1,35 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class InputHandler : MonoBehaviour
 {
+    public bool holding;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
+        PlayerActions controls = new PlayerActions();
+        //controls.Gameplay.Hold.performed += OnHold;
+        //controls.Gameplay.Hold.canceled += OnHoldCanceled;
 
+    }
+
+    private void OnHoldCanceled(InputAction.CallbackContext context)
+    {
+        holding = true;
+    }
+
+    private void OnHold(InputAction.CallbackContext context)
+    {
+        holding = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (holding)
+        {
+            print("holding");
+        }
     }
     public void OnClick(InputAction.CallbackContext context)
     {
