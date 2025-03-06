@@ -6,11 +6,13 @@ public class SoundManager : MonoBehaviour
 
     [Header("Audio Sources")]
     public AudioSource sfxSource;
+    public AudioSource musicSource;
 
     [Header("Audio Clips")]
     public AudioClip enemyDestroyedClip;
     public AudioClip pistolFiredClip;
     public AudioClip baseTakeDamageClip;
+    public AudioClip music;
 
     private void Awake()
     {
@@ -23,6 +25,8 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        musicSource.clip = music;
+        musicSource.Play();
     }
     public void PlaySound(AudioClip sound){
         sfxSource.PlayOneShot(sound);
