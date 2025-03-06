@@ -52,7 +52,7 @@ public class Bouncer : MonoBehaviour
         }
         if (GetComponent<EnemyValues>().health <= 0)
         {
-            SoundManager.Instance.PlayEnemyDestroyedSound();
+            SoundManager.Instance.PlaySound(SoundManager.Instance.enemyDestroyedClip);
             Destroy(gameObject);
         }
 

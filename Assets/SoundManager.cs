@@ -6,7 +6,6 @@ public class SoundManager : MonoBehaviour
 
     [Header("Audio Sources")]
     public AudioSource sfxSource;
-    public AudioSource musicSource;
 
     [Header("Audio Clips")]
     public AudioClip enemyDestroyedClip;
@@ -25,19 +24,7 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public void PlayEnemyDestroyedSound()
-    {
-        sfxSource.PlayOneShot(enemyDestroyedClip);
-    }
-
-    public void PlayPistolFiredSound()
-    {
-        sfxSource.PlayOneShot(pistolFiredClip);
-    }
-
-    public void PlayBaseTakeDamageSound()
-    {
-        sfxSource.PlayOneShot(baseTakeDamageClip);
+    public void PlaySound(AudioClip sound){
+        sfxSource.PlayOneShot(sound);
     }
 }

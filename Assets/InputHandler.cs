@@ -20,7 +20,7 @@ public class InputHandler : MonoBehaviour
         {
             if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Pistolmode)
             {
-                SoundManager.Instance.PlayPistolFiredSound();
+                SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
                 LayerMask enemyLayer = LayerMask.GetMask("Enemy");
                 RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
                 if (hit.collider.gameObject.tag == "Enemy")
@@ -36,7 +36,7 @@ public class InputHandler : MonoBehaviour
             {
                 if (Time.time > timestamp)
                 {
-                    SoundManager.Instance.PlayPistolFiredSound();
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
                     timestamp = Time.time + GameManager.Instance.machinegunfirerate;
                     LayerMask enemyLayer = LayerMask.GetMask("Enemy");
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
