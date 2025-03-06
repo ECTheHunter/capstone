@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Bouncer : MonoBehaviour
@@ -50,6 +49,9 @@ public class Bouncer : MonoBehaviour
         else
         {
             cansplit = false;
+        }
+        if(GetComponent<EnemyValues>().health <= 0){
+            Destroy(gameObject);
         }
        
     }

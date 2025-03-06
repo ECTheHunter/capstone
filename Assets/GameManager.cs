@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public enum WEAPONMODE{
+        Pistolmode,
+        Machinegunmode
+    }
     public static GameManager Instance { get; private set; }
     public float healthvalue;
     public GameObject player;
     public float damage;
+    public int weaponmode = 0;
+    public float machinegunfirerate;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
