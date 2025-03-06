@@ -16,5 +16,6 @@ public class Health : MonoBehaviour
     public void DoDamage(float damage)
     {
         GameManager.Instance.healthvalue -= damage;
+        SoundManager.Instance.PlayBaseTakeDamageSound();
     }
 }

@@ -35,7 +35,7 @@ public class Bouncer : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
-         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);
 
         Debug.DrawRay(transform.position, direction);
         if (hit.collider == null)
@@ -50,10 +50,12 @@ public class Bouncer : MonoBehaviour
         {
             cansplit = false;
         }
-        if(GetComponent<EnemyValues>().health <= 0){
+        if (GetComponent<EnemyValues>().health <= 0)
+        {
+            SoundManager.Instance.PlayEnemyDestroyedSound();
             Destroy(gameObject);
         }
-       
+
     }
     // Update is called once per frame
     void FixedUpdate()

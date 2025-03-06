@@ -66,6 +66,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (GetComponent<EnemyValues>().health <= 0)
         {
+            SoundManager.Instance.PlayEnemyDestroyedSound();
             Destroy(gameObject);
         }
     }
@@ -74,7 +75,6 @@ public class EnemyAI : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Health>().DoDamage(GetComponent<EnemyValues>().damage);
-            SoundManager.Instance.PlayEnemyShotSound();
             Destroy(gameObject);
         }
     }

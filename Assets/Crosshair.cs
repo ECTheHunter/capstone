@@ -15,10 +15,4 @@ public class Crosshair : MonoBehaviour
         transform.position = mousecursorPos;
     }
 
-    // Example in Crosshair.cs
-    public void FireGun()
-    {
-        // Gun firing logic
-        SoundManager.Instance.PlayGunFiredSound();
-    }
 }

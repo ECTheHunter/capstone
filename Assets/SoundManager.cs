@@ -9,9 +9,9 @@ public class SoundManager : MonoBehaviour
     public AudioSource musicSource;
 
     [Header("Audio Clips")]
-    public AudioClip enemyShotClip;
-    public AudioClip gunFiredClip;
-    public AudioClip heartMissedClip;
+    public AudioClip enemyDestroyedClip;
+    public AudioClip pistolFiredClip;
+    public AudioClip baseTakeDamageClip;
 
     private void Awake()
     {
@@ -26,18 +26,18 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayEnemyShotSound()
+    public void PlayEnemyDestroyedSound()
     {
-        sfxSource.PlayOneShot(enemyShotClip);
+        sfxSource.PlayOneShot(enemyDestroyedClip);
     }
 
-    public void PlayGunFiredSound()
+    public void PlayPistolFiredSound()
     {
-        sfxSource.PlayOneShot(gunFiredClip);
+        sfxSource.PlayOneShot(pistolFiredClip);
     }
 
-    public void PlayHeartMissedSound()
+    public void PlayBaseTakeDamageSound()
     {
-        sfxSource.PlayOneShot(heartMissedClip);
+        sfxSource.PlayOneShot(baseTakeDamageClip);
     }
 }
