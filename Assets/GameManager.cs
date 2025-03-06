@@ -21,7 +21,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
     }
-
+    public void OnHeartMissed()
+    {
+        SoundManager.Instance.PlayHeartMissedSound();
+    }
+    
     // Update is called once per frame
     void Update()
     {
