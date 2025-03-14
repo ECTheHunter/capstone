@@ -28,8 +28,14 @@ public class InputHandler : MonoBehaviour
                     hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
                 }
             }
+            if(GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Shotgunmode)
+            {
+                SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
+                LayerMask enemyLayer = LayerMask.GetMask("Enemy");
+            }
 
         }
+        
         if (Input.GetMouseButton(0))
         {
             if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Machinegunmode)
