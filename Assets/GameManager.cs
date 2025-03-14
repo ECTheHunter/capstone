@@ -4,7 +4,8 @@ public class GameManager : MonoBehaviour
 {
     public enum WEAPONMODE{
         Pistolmode,
-        Machinegunmode
+        Machinegunmode,
+        Shotgunmode
     }
     public static GameManager Instance { get; private set; }
     public float healthvalue;

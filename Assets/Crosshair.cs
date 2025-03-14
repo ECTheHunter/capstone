@@ -2,17 +2,34 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
+    [SerializeField] private Texture2D currentcross;
+    [SerializeField] private Texture2D pistolcross;
+    [SerializeField] private Texture2D machinecross;
+    [SerializeField] private Texture2D shotguncross;
+    private Vector2 currenthotspot;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Cursor.visible = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 mousecursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = mousecursorPos;
+        switch (GameManager.Instance.weaponmode)
+        {
+            case (int)GameManager.WEAPONMODE.Pistolmode:
+                currentcross = pistolcross;
+                break;
+            case (int)GameManager.WEAPONMODE.Machinegunmode:
+                currentcross = machinecross;
+                break;
+            case (int)GameManager.WEAPONMODE.Shotgunmode:
+                currentcross = shotguncross;
+                break;
+        }
+        currenthotspot = new Vector2(currentcross.width / 2, currentcross.height / 2);
+        Cursor.SetCursor(currentcross, currenthotspot, CursorMode.Auto);
     }
 
 }
