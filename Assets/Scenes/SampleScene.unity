@@ -1067,10 +1067,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthvalue: 3
   player: {fileID: 0}
-  damage: 1
+  pistoldamage: 1
+  machinegundamage: 0.5
+  shotgundamage: 1
   weaponmode: 0
   machinegunfirerate: 0.4
   pistolfirerate: 0.75
+  shotgunfirerate: 2
+  shotgunpellets: 10
+  shotgunspread: 0.7
 --- !u!4 &1269462766
 Transform:
   m_ObjectHideFlags: 0

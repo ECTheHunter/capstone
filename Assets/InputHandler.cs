@@ -4,6 +4,7 @@ public class InputHandler : MonoBehaviour
 {
     private float pistoltimestamp;
     private float machineguntimestamp;
+    private float shotguntimestamp;
     void Update()
     {
 
@@ -15,7 +16,7 @@ public class InputHandler : MonoBehaviour
         {
             GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Machinegunmode;
         }
-         if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Shotgunmode;
         }
@@ -33,18 +34,36 @@ public class InputHandler : MonoBehaviour
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
                     if (hit.collider.gameObject.tag == "Enemy")
                     {
-                        hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
+                        hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.pistoldamage);
                     }
                 }
             }
-            if(GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Shotgunmode)
+            if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Shotgunmode)
             {
-                SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
-                LayerMask enemyLayer = LayerMask.GetMask("Enemy");
-            }
+                if (Time.time > shotguntimestamp)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
+                    shotguntimestamp = Time.time + GameManager.Instance.shotgunfirerate;
 
+                    int pelletCount = GameManager.Instance.shotgunpellets; // Number of pellets per shot
+                    float spreadDistance = GameManager.Instance.shotgunspread; // Spread distance for randomness
+                    LayerMask enemyLayer = LayerMask.GetMask("Enemy");
+
+                    for (int i = 0; i < pelletCount; i++)
+                    {
+                        Vector2 randomOffset = new Vector2(UnityEngine.Random.Range(-spreadDistance, spreadDistance), UnityEngine.Random.Range(-spreadDistance, spreadDistance));
+                        Vector2 shootPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + randomOffset;
+                        Debug.DrawLine(shootPosition, shootPosition+Vector2.right*0.1f, Color.red, 0.5f);
+                        RaycastHit2D hit = Physics2D.Raycast(shootPosition, Vector2.zero, Mathf.Infinity, enemyLayer);
+                        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+                        {
+                            hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.shotgundamage);
+                        }
+                    }
+                }
+
+            }
         }
-        
         if (Input.GetMouseButton(0))
         {
             if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Machinegunmode)
@@ -57,7 +76,7 @@ public class InputHandler : MonoBehaviour
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
                     if (hit.collider.gameObject.tag == "Enemy")
                     {
-                        hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
+                        hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.machinegundamage);
                     }
                 }
             }

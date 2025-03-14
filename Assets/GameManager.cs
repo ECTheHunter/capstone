@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public enum WEAPONMODE{
+    public enum WEAPONMODE
+    {
         Pistolmode,
         Machinegunmode,
         Shotgunmode
@@ -10,10 +11,15 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public float healthvalue;
     public GameObject player;
-    public float damage;
+    public float pistoldamage;
+    public float machinegundamage;
+    public float shotgundamage;
     public int weaponmode = 0;
     public float machinegunfirerate;
     public float pistolfirerate;
+    public float shotgunfirerate;
+    public int shotgunpellets;
+    public float shotgunspread;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,7 +35,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
     }
-    
+
     // Update is called once per frame
     void Update()
     {
