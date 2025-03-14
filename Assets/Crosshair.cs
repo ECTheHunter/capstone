@@ -29,7 +29,7 @@ public class Crosshair : MonoBehaviour
                 break;
         }
         currenthotspot = new Vector2(currentcross.width / 2, currentcross.height / 2);
-        Cursor.SetCursor(currentcross, currenthotspot, CursorMode.Auto);
+        Cursor.SetCursor(currentcross, currenthotspot, CursorMode.ForceSoftware);
     }
 
 }

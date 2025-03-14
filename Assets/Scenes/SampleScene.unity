@@ -974,8 +974,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentcross: {fileID: 0}
-  pistolcross: {fileID: 2800000, guid: 56f433345b1faa64eb50cdb197d34f71, type: 3}
-  machinecross: {fileID: 2800000, guid: 6630dbfefd1c68a42971b0d02b77150e, type: 3}
+  pistolcross: {fileID: 2800000, guid: 1d78ea13ed0615c4996735add71cbd43, type: 3}
+  machinecross: {fileID: 2800000, guid: c186448c466fad9478c38ce9c2f7b71b, type: 3}
   shotguncross: {fileID: 2800000, guid: e7e80d39e3e102147a3be13caa7cd3d7, type: 3}
 --- !u!4 &946165460
 Transform:
@@ -1069,7 +1069,8 @@ MonoBehaviour:
   player: {fileID: 0}
   damage: 1
   weaponmode: 0
-  machinegunfirerate: 1
+  machinegunfirerate: 0.4
+  pistolfirerate: 0.75
 --- !u!4 &1269462766
 Transform:
   m_ObjectHideFlags: 0

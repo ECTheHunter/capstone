@@ -2,7 +2,8 @@ using System;
 using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
-    private float timestamp;
+    private float pistoltimestamp;
+    private float machineguntimestamp;
     void Update()
     {
 
@@ -14,18 +15,26 @@ public class InputHandler : MonoBehaviour
         {
             GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Machinegunmode;
         }
+         if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Shotgunmode;
+        }
 
 
         if (Input.GetMouseButtonDown(0))
         {
             if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Pistolmode)
             {
-                SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
-                LayerMask enemyLayer = LayerMask.GetMask("Enemy");
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
-                if (hit.collider.gameObject.tag == "Enemy")
+                if (Time.time > pistoltimestamp)
                 {
-                    hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
+                    pistoltimestamp = Time.time + GameManager.Instance.pistolfirerate;
+                    LayerMask enemyLayer = LayerMask.GetMask("Enemy");
+                    RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
+                    if (hit.collider.gameObject.tag == "Enemy")
+                    {
+                        hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.damage);
+                    }
                 }
             }
             if(GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Shotgunmode)
@@ -40,10 +49,10 @@ public class InputHandler : MonoBehaviour
         {
             if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Machinegunmode)
             {
-                if (Time.time > timestamp)
+                if (Time.time > machineguntimestamp)
                 {
                     SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
-                    timestamp = Time.time + GameManager.Instance.machinegunfirerate;
+                    machineguntimestamp = Time.time + GameManager.Instance.machinegunfirerate;
                     LayerMask enemyLayer = LayerMask.GetMask("Enemy");
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);
                     if (hit.collider.gameObject.tag == "Enemy")
