@@ -9,13 +9,13 @@ public class SoundManager : MonoBehaviour
     public AudioSource musicSource;
 
     [Header("Audio Clips")]
-    public AudioClip enemyDestroyedClip;
+    public AudioClip regularenemyDestroyedClip;
     public AudioClip pistolFiredClip;
     public AudioClip baseTakeDamageClip;
     public AudioClip music;
-    public AudioClip shotgun;
-    public AudioClip machineGun;
-    public AudioClip enemyDestroyed1Clip;
+    public AudioClip shotgunFiredClip;
+    public AudioClip machinegunFiredClip;
+    public AudioClip bouncingDestroyedClip;
 
     private void Awake()
     {

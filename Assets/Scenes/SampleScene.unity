@@ -1441,10 +1441,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSource: {fileID: 1664248071}
   musicSource: {fileID: 1664248072}
-  enemyDestroyedClip: {fileID: 8300000, guid: 902a47ce75c0fa241a90266b6aee83fa, type: 3}
+  regularenemyDestroyedClip: {fileID: 8300000, guid: 902a47ce75c0fa241a90266b6aee83fa, type: 3}
   pistolFiredClip: {fileID: 8300000, guid: 29759fef34cd6c74a84fceea751bfc92, type: 3}
   baseTakeDamageClip: {fileID: 8300000, guid: c0794e4c587bf8044a15f23456b38783, type: 3}
   music: {fileID: 8300000, guid: 2539fe1a0f6f8b241b0bc2cf22f6f540, type: 3}
+  shotgunFiredClip: {fileID: 8300000, guid: 1f30cf2fb89ebff4c8055dc50bea46ab, type: 3}
+  machinegunFiredClip: {fileID: 8300000, guid: 859a367672a133443a4bbade4456352f, type: 3}
+  bouncingDestroyedClip: {fileID: 8300000, guid: 2eb2e135f4aa70e4f9a28e1faeae6704, type: 3}
 --- !u!4 &1664248070
 Transform:
   m_ObjectHideFlags: 0
