@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip shotgun;
     public AudioClip machineGun;
     public AudioClip enemyDestroyed1Clip;
+    public AudioClip gameOver;
 
     private void Awake()
     {
