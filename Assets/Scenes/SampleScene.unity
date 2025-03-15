@@ -1441,10 +1441,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSource: {fileID: 1664248071}
   musicSource: {fileID: 1664248072}
-  enemyDestroyedClip: {fileID: 8300000, guid: 1eaa427007585ec47ae87f8d9d91a5f4, type: 3}
-  pistolFiredClip: {fileID: 8300000, guid: 187cc9bab5712694e9bef3ab0f6d3e35, type: 3}
-  baseTakeDamageClip: {fileID: 8300000, guid: d8cca1b14fe5c9049aaa30a7aa887141, type: 3}
-  music: {fileID: 8300000, guid: 7f97c25f2908f504a9fd8404e62aed2e, type: 3}
+  enemyDestroyedClip: {fileID: 8300000, guid: 902a47ce75c0fa241a90266b6aee83fa, type: 3}
+  pistolFiredClip: {fileID: 8300000, guid: 29759fef34cd6c74a84fceea751bfc92, type: 3}
+  baseTakeDamageClip: {fileID: 8300000, guid: c0794e4c587bf8044a15f23456b38783, type: 3}
+  music: {fileID: 8300000, guid: 2539fe1a0f6f8b241b0bc2cf22f6f540, type: 3}
 --- !u!4 &1664248070
 Transform:
   m_ObjectHideFlags: 0
@@ -1479,7 +1479,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 100
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
