@@ -42,7 +42,7 @@ public class InputHandler : MonoBehaviour
             {
                 if (Time.time > shotguntimestamp)
                 {
-                    SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.shotgunFiredClip);
                     shotguntimestamp = Time.time + GameManager.Instance.shotgunfirerate;
 
                     int pelletCount = GameManager.Instance.shotgunpellets; // Number of pellets per shot
@@ -70,7 +70,7 @@ public class InputHandler : MonoBehaviour
             {
                 if (Time.time > machineguntimestamp)
                 {
-                    SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.machinegunFiredClip);
                     machineguntimestamp = Time.time + GameManager.Instance.machinegunfirerate;
                     LayerMask enemyLayer = LayerMask.GetMask("Enemy");
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, enemyLayer);

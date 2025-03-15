@@ -66,7 +66,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (GetComponent<EnemyValues>().health <= 0)
         {
-            SoundManager.Instance.PlaySound(SoundManager.Instance.enemyDestroyedClip);
+            SoundManager.Instance.PlaySound(SoundManager.Instance.regularenemyDestroyedClip);
             Destroy(gameObject);
         }
     }
