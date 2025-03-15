@@ -1448,7 +1448,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 2539fe1a0f6f8b241b0bc2cf22f6f540, type: 3}
   shotgunFiredClip: {fileID: 8300000, guid: 1f30cf2fb89ebff4c8055dc50bea46ab, type: 3}
   machinegunFiredClip: {fileID: 8300000, guid: 859a367672a133443a4bbade4456352f, type: 3}
-  bouncingDestroyedClip: {fileID: 8300000, guid: 2eb2e135f4aa70e4f9a28e1faeae6704, type: 3}
+  bouncingDestroyedClip: {fileID: 8300000, guid: b63d71b5c1cff384e8ce413efa81fff1, type: 3}
 --- !u!4 &1664248070
 Transform:
   m_ObjectHideFlags: 0
