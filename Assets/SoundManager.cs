@@ -13,9 +13,16 @@ public class SoundManager : MonoBehaviour
     public AudioClip pistolFiredClip;
     public AudioClip baseTakeDamageClip;
     public AudioClip music;
+<<<<<<< HEAD
+    public AudioClip shotgun;
+    public AudioClip machineGun;
+    public AudioClip enemyDestroyed1Clip;
+    public AudioClip gameOver;
+=======
     public AudioClip shotgunFiredClip;
     public AudioClip machinegunFiredClip;
     public AudioClip bouncingDestroyedClip;
+>>>>>>> 81a3b753a08cc11060eb3f085d377cdd4d925a58
 
     private void Awake()
     {
