@@ -1,0 +1,34 @@
+using UnityEngine;
+
+public class BlackHole : MonoBehaviour
+{
+    [SerializeField] private float force;
+    [SerializeField] private float duration;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Rigidbody2D rb = other.attachedRigidbody;
+
+            if (rb == null) return;
+            Vector2 center = transform.position;
+            float magnitude = ((Vector2)other.transform.position - center).magnitude;
+            Vector2 direction = ((Vector2)other.transform.position - center).normalized * -1/magnitude;
+            if (direction.magnitude == 0) return;
+            rb.AddForce(direction * force, ForceMode2D.Force);
+
+        }
+
+    }
+}
