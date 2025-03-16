@@ -5,16 +5,17 @@ public class BlackHole : MonoBehaviour
     [SerializeField] private float force;
     [SerializeField] private float duration;
     [SerializeField] private float rotationspeed;
+    private float spawnTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        spawnTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > duration)
+        if (Time.time > spawnTime + duration)
         {
             Destroy(gameObject);
         }

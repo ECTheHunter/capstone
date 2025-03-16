@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
     {
         Pistolmode,
         Machinegunmode,
-        Shotgunmode
+        Shotgunmode,
+        BlackHolemode
     }
     public static GameManager Instance { get; private set; }
     public float healthvalue;
@@ -18,8 +19,10 @@ public class GameManager : MonoBehaviour
     public float machinegunfirerate;
     public float pistolfirerate;
     public float shotgunfirerate;
+    public float blackholefirerate;
     public int shotgunpellets;
     public float shotgunspread;
+    public GameObject blackholeinstance;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

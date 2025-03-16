@@ -6,6 +6,7 @@ public class Crosshair : MonoBehaviour
     [SerializeField] private Texture2D pistolcross;
     [SerializeField] private Texture2D machinecross;
     [SerializeField] private Texture2D shotguncross;
+    [SerializeField] private Texture2D blackholecross;
     private Vector2 currenthotspot;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +27,9 @@ public class Crosshair : MonoBehaviour
                 break;
             case (int)GameManager.WEAPONMODE.Shotgunmode:
                 currentcross = shotguncross;
+                break;
+            case (int)GameManager.WEAPONMODE.BlackHolemode:
+                currentcross = blackholecross;
                 break;
         }
         currenthotspot = new Vector2(currentcross.width / 2, currentcross.height / 2);

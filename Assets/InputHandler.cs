@@ -5,6 +5,7 @@ public class InputHandler : MonoBehaviour
     private float pistoltimestamp;
     private float machineguntimestamp;
     private float shotguntimestamp;
+    private float blackholetimestamp;
     void Update()
     {
 
@@ -19,6 +20,10 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Shotgunmode;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.BlackHolemode;
         }
 
 
@@ -38,6 +43,16 @@ public class InputHandler : MonoBehaviour
                     }
                 }
             }
+            if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.BlackHolemode)
+            {
+                if (Time.time > blackholetimestamp)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
+                    blackholetimestamp = Time.time + GameManager.Instance.blackholefirerate;
+                    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    Instantiate(GameManager.Instance.blackholeinstance, mousePosition, Quaternion.identity);
+                }
+            }
             if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Shotgunmode)
             {
                 if (Time.time > shotguntimestamp)
@@ -53,7 +68,7 @@ public class InputHandler : MonoBehaviour
                     {
                         Vector2 randomOffset = new Vector2(UnityEngine.Random.Range(-spreadDistance, spreadDistance), UnityEngine.Random.Range(-spreadDistance, spreadDistance));
                         Vector2 shootPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + randomOffset;
-                        Debug.DrawLine(shootPosition, shootPosition+Vector2.right*0.1f, Color.red, 0.5f);
+                        Debug.DrawLine(shootPosition, shootPosition + Vector2.right * 0.1f, Color.red, 0.5f);
                         RaycastHit2D hit = Physics2D.Raycast(shootPosition, Vector2.zero, Mathf.Infinity, enemyLayer);
                         if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
                         {
