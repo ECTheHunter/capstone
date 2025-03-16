@@ -954,6 +954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 900371364}
   - component: {fileID: 900371365}
+  - component: {fileID: 900371366}
   m_Layer: 0
   m_Name: DestroyArea
   m_TagString: Untagged
@@ -1012,6 +1013,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.55
+--- !u!114 &900371366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900371363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672879bc19f3b834b9b152e567518dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &946165457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,8 +1904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acd2995cfeb15245b6aa99dff6e33d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
-  duration: 0
+  force: 11
+  duration: 10
 --- !u!212 &2051788199
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1983,7 +1996,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 3
+  m_Radius: 3.5
 --- !u!4 &2051788201
 Transform:
   m_ObjectHideFlags: 0
@@ -1993,7 +2006,7 @@ Transform:
   m_GameObject: {fileID: 2051788197}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.66, y: 1.94, z: -0.0801719}
+  m_LocalPosition: {x: -7.7, y: 0.63, z: -0.0801719}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -50,11 +50,6 @@ public class Bouncer : MonoBehaviour
         {
             cansplit = false;
         }
-        if (GetComponent<EnemyValues>().health <= 0)
-        {
-            SoundManager.Instance.PlaySound(SoundManager.Instance.bouncingDestroyedClip);
-            Destroy(gameObject);
-        }
 
     }
     // Update is called once per frame
