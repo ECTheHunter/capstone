@@ -10,9 +10,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            print("yooooooooooooooooooo");
             if (isPaused)
             {
                 ResumeGame();
+                
             }
             else
             {
