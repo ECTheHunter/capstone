@@ -22,7 +22,9 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-
+   public void T(){
+    print("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
+   }
     public void ResumeGame()
     {
         pauseUI.SetActive(false);
