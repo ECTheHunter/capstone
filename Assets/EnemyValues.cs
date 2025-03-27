@@ -7,6 +7,7 @@ public class EnemyValues : MonoBehaviour
     {
         regularenemy,
         bouncingenemy,
+        left_right
 
     }
     public EnemyTypes enemyType;
