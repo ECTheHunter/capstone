@@ -6,11 +6,12 @@ public class Left_Right : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float shootrate;
     [SerializeField] private GameObject projectile;
+    private float nextShootTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        nextShootTime = shootrate;
     }
 
     // Update is called once per frame
@@ -26,6 +27,12 @@ public class Left_Right : MonoBehaviour
             dir = Vector2.right * speed * Time.deltaTime;
         }
         transform.Translate(dir);
+        if (Time.time >= nextShootTime)
+        {
+            GameObject bullet = Instantiate(projectile, transform.position, transform.rotation);
+            bullet.GetComponent<L_R_Bullet>().damage = GetComponent<EnemyValues>().damage;
+            nextShootTime = Time.time + shootrate;  // Set the next shoot time
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
