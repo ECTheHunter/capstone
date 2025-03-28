@@ -22,4 +22,12 @@ public class L_R_Bullet : MonoBehaviour
     {
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GameManager.Instance.player.GetComponent<Health>().DoDamage(damage);
+            Destroy(gameObject);
+        }
+    }
 }

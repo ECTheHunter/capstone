@@ -47,7 +47,7 @@ public class InputHandler : MonoBehaviour
             {
                 if (Time.time > blackholetimestamp)
                 {
-                    SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.blackholeFiredClip);
                     blackholetimestamp = Time.time + GameManager.Instance.blackholefirerate;
                     Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     Instantiate(GameManager.Instance.blackholeinstance, mousePosition, Quaternion.identity);

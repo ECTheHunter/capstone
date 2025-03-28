@@ -35,6 +35,9 @@ public class EnemyValues : MonoBehaviour
             case EnemyTypes.bouncingenemy:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.bouncingDestroyedClip);
                 break;
+            case EnemyTypes.left_right:
+                SoundManager.Instance.PlaySound(SoundManager.Instance.l_rDestroyedClip);
+                break;
         }
 
         Destroy(gameObject);

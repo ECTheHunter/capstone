@@ -15,7 +15,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip music;
     public AudioClip shotgunFiredClip;
     public AudioClip machinegunFiredClip;
+    public AudioClip blackholeFiredClip;
     public AudioClip bouncingDestroyedClip;
+    public AudioClip l_rDestroyedClip;
 
     private void Awake()
     {
