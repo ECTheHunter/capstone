@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public int shotgunpellets;
     public float shotgunspread;
     public GameObject blackholeinstance;
+    public GameObject healthpickup;
+    public GameObject ammopickup;
+    public GameObject doubledamage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

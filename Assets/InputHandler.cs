@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
@@ -29,8 +30,10 @@ public class InputHandler : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+           
             if (GameManager.Instance.weaponmode == (int)GameManager.WEAPONMODE.Pistolmode)
             {
+
                 if (Time.time > pistoltimestamp)
                 {
                     SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);

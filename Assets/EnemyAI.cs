@@ -64,11 +64,7 @@ public class EnemyAI : MonoBehaviour
     }
     void Update()
     {
-        if (GetComponent<EnemyValues>().health <= 0)
-        {
-            SoundManager.Instance.PlaySound(SoundManager.Instance.regularenemyDestroyedClip);
-            Destroy(gameObject);
-        }
+        
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {

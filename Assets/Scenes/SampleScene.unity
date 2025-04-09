@@ -1079,6 +1079,9 @@ MonoBehaviour:
   shotgunpellets: 10
   shotgunspread: 0.7
   blackholeinstance: {fileID: 8350653574753604084, guid: 76d183778c813fc49b12d3f2ed5c96c8, type: 3}
+  healthpickup: {fileID: 6996289769472307816, guid: d996da14248be844e98d2c5d023b43bf, type: 3}
+  ammopickup: {fileID: 6996289769472307816, guid: d996da14248be844e98d2c5d023b43bf, type: 3}
+  doubledamage: {fileID: 6996289769472307816, guid: d996da14248be844e98d2c5d023b43bf, type: 3}
 --- !u!4 &1269462766
 Transform:
   m_ObjectHideFlags: 0
