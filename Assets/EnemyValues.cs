@@ -28,13 +28,9 @@ public class EnemyValues : MonoBehaviour
     public void RandomPickUp()
     {
         int randomValue = Random.Range(1, 101); // 0, 1, or 2
-Debug.Log("GameManager instance is afddsfdsdfffffffffffffffffff. Cannot spawn pickup.");
+
         GameObject prefabToSpawn = null;
-        if (GameManager.Instance == null)
-        {
-            Debug.Log("GameManager instance is null. Cannot spawn pickup.");
-            return;
-        }
+       
         if (randomValue > 1 && randomValue < 40)
         {
             prefabToSpawn = null;
