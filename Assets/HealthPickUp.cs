@@ -6,14 +6,14 @@ public class HealthPickUp : PickUpClass
 
     public override void pickUpEffect()
     {
-        GameManager.Instance.healthvalue = healthamount;
+        GameManager.Instance.healthvalue += healthamount;
         Destroy(gameObject);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        int randomValue = Random.Range(0, 3); // Picks 0, 1, or 2
+        int randomValue = Random.Range(0, 3); 
 
         switch (randomValue)
         {

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -26,7 +27,10 @@ public class GameManager : MonoBehaviour
     public GameObject healthpickup;
     public GameObject ammopickup;
     public GameObject doubledamage;
-
+    public int shotgunammo = 0;
+    public int machinegunammo = 0;
+    public int blackholeammo = 0;
+    public bool doubledamagemodifier;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,6 +43,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(this);
+        shotgunammo = Math.Clamp(shotgunammo, 0, 24);
+        machinegunammo = Math.Clamp(machinegunammo, 0, 180);
+        blackholeammo = Math.Clamp(blackholeammo, 0, 3);
 
     }
 
