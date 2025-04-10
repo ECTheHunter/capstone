@@ -63,6 +63,6 @@ public class GameManager : MonoBehaviour
         shotgunammo = Math.Clamp(shotgunammo, 0, 24);
         machinegunammo = Math.Clamp(machinegunammo, 0, 180);
         blackholeammo = Math.Clamp(blackholeammo, 0, 3);
-
+        healthvalue = Math.Clamp(healthvalue, 0, 100);
     }
 }
