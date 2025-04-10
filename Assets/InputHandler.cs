@@ -72,17 +72,17 @@ public class InputHandler : MonoBehaviour
 
                     int pelletCount = GameManager.Instance.shotgunpellets; // Number of pellets per shot
                     float spreadDistance = GameManager.Instance.shotgunspread; // Spread distance for randomness
-
+                    GameManager.Instance.shotgunammo -= 1;
                     for (int i = 0; i < pelletCount; i++)
                     {
                         Vector2 randomOffset = new Vector2(UnityEngine.Random.Range(-spreadDistance, spreadDistance), UnityEngine.Random.Range(-spreadDistance, spreadDistance));
                         Vector2 shootPosition = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) + randomOffset;
                         Debug.DrawLine(shootPosition, shootPosition + Vector2.right * 0.1f, Color.red, 0.5f);
-                        GameManager.Instance.shotgunammo -= 1;
+
                         RaycastHit2D hit = Physics2D.Raycast(shootPosition, Vector2.zero, Mathf.Infinity, combinedMask);
                         if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
                         {
-                                                    hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.doubledamagemodifier ? GameManager.Instance.shotgundamage * 2 : GameManager.Instance.shotgundamage);
+                            hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.doubledamagemodifier ? GameManager.Instance.shotgundamage * 2 : GameManager.Instance.shotgundamage);
                         }
                         else if (hit.collider.gameObject.tag == "PickUp")
                         {
@@ -105,7 +105,7 @@ public class InputHandler : MonoBehaviour
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, combinedMask);
                     if (hit.collider.gameObject.tag == "Enemy")
                     {
-                                                hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.doubledamagemodifier ? GameManager.Instance.machinegundamage * 2 : GameManager.Instance.machinegundamage);
+                        hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.doubledamagemodifier ? GameManager.Instance.machinegundamage * 2 : GameManager.Instance.machinegundamage);
                     }
                     else if (hit.collider.gameObject.tag == "PickUp")
                     {

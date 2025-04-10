@@ -4,7 +4,8 @@ public class x2DamagePickUp : PickUpClass
 {
     public override void pickUpEffect()
     {
-        throw new System.NotImplementedException();
+        GameManager.Instance.ActivateDoubleDamage();
+        Destroy(gameObject);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

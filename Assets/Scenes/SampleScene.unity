@@ -1081,10 +1081,12 @@ MonoBehaviour:
   blackholeinstance: {fileID: 8350653574753604084, guid: 76d183778c813fc49b12d3f2ed5c96c8, type: 3}
   healthpickup: {fileID: 6996289769472307816, guid: d996da14248be844e98d2c5d023b43bf, type: 3}
   ammopickup: {fileID: 8305783697267056749, guid: 7bbd4bd23025ca54ca588acb4f2ecc96, type: 3}
-  doubledamage: {fileID: 6996289769472307816, guid: d996da14248be844e98d2c5d023b43bf, type: 3}
+  doubledamage: {fileID: 5758876792652276952, guid: aa5ea3928d3851b41a4133f2c676af1d, type: 3}
   shotgunammo: 0
   machinegunammo: 0
   blackholeammo: 0
+  doubledamagemodifier: 0
+  doubleDamageDuration: 5
 --- !u!4 &1269462766
 Transform:
   m_ObjectHideFlags: 0
