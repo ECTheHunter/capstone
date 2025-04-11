@@ -21,7 +21,7 @@ public class Bouncer : MonoBehaviour
         if (!isminion)
         {
             float angleOffset = Random.Range(-30f, 30f); // Random offset within -45 to 45 degrees
-            direction = Quaternion.Euler(0, 0, angleOffset) * transform.right; // Use transform.right as the base direction
+            direction = Quaternion.Euler(0, 0, angleOffset) * transform.up * -1; // Use transform.right as the base direction
             direction = direction.normalized;
         }
 
@@ -32,7 +32,7 @@ public class Bouncer : MonoBehaviour
     void Update()
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
 
         int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);

@@ -19,10 +19,9 @@ public class EnemyValues : MonoBehaviour
     public Material originalMaterial;
     public Material flashMaterial;
     public Animator animator;
-    void Start()
+    void Awake()
     {
         originalMaterial = spriteRenderer.material;
-        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -88,6 +87,9 @@ public class EnemyValues : MonoBehaviour
                 break;
             case EnemyTypes.left_right:
                 SoundManager.Instance.PlaySound(SoundManager.Instance.l_rDestroyedClip);
+                break;
+            case EnemyTypes.chomper:
+                SoundManager.Instance.PlaySound(SoundManager.Instance.chomperDestroyedClip);
                 break;
         }
         RandomPickUp();

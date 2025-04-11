@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544e3199e3ec89e44bfa8967cc2c07de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2601081176988371920}
 --- !u!61 &7370194021591416652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -241,7 +242,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7099770461306494512}
   originalMaterial: {fileID: 0}
   flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
-  animator: {fileID: 0}
+  animator: {fileID: 2601081176988371920}
 --- !u!95 &2601081176988371920
 Animator:
   serializedVersion: 7

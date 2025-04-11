@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7049842978411100666}
   - component: {fileID: 3942594517641617611}
-  - component: {fileID: 3024921485087854287}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -119,28 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3024921485087854287
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2211056958267952539}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4913959121887310431
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +131,7 @@ GameObject:
   - component: {fileID: 7765563836872619277}
   - component: {fileID: 6074380613516990628}
   - component: {fileID: 297381150118564354}
+  - component: {fileID: 5994469770969200243}
   m_Layer: 7
   m_Name: Bouncer
   m_TagString: Enemy
@@ -244,7 +222,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3942594517641617611}
   originalMaterial: {fileID: 0}
   flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
-  animator: {fileID: 0}
+  animator: {fileID: 5994469770969200243}
 --- !u!58 &297381150118564354
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -281,3 +259,25 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.14
+--- !u!95 &5994469770969200243
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4913959121887310431}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 816c3492bc2431a4ebd6610c439ae65e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
