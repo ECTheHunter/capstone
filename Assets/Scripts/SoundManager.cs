@@ -18,6 +18,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip blackholeFiredClip;
     public AudioClip bouncingDestroyedClip;
     public AudioClip l_rDestroyedClip;
+    public AudioClip chomperDestroyedClip;
 
     private void Awake()
     {

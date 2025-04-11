@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Collections;
 using UnityEngine;
 
@@ -7,13 +8,14 @@ public class EnemyValues : MonoBehaviour
     {
         regularenemy,
         bouncingenemy,
-        left_right
+        left_right,
+        chomper
 
     }
     public EnemyTypes enemyType;
     public float health;
     public float damage;
-
+    public SpriteRenderer spriteRenderer;
     private void Update()
     {
         if (health <= 0)
@@ -23,8 +25,21 @@ public class EnemyValues : MonoBehaviour
     }
     public void EatDamage(float damage)
     {
+        StartCoroutine(FlashRoutine());
         GetComponent<EnemyValues>().health -= damage;
     }
+    private IEnumerator FlashRoutine()
+{
+    Color originalColor = spriteRenderer.color;
+
+    for (int i = 0; i < 3; i++)
+    {
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(1f);
+        spriteRenderer.color = originalColor;
+        yield return new WaitForSeconds(1f);
+    }
+}
     public void RandomPickUp()
     {
         int randomValue = Random.Range(1, 101); // 0, 1, or 2

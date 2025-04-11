@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class Chomper : MonoBehaviour
 {
-    [SerializeField] private float damagePerSecond;
-
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.tag == "Player") // or enemy, etc.
@@ -25,7 +23,7 @@ public class Chomper : MonoBehaviour
     {
         while (targetHealth != null)
         {
-            targetHealth.DoDamage(damagePerSecond);
+            targetHealth.DoDamage(GetComponent<EnemyValues>().damage);
             yield return new WaitForSeconds(1f); // 1 second interval
         }
     }

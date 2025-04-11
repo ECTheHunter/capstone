@@ -41,7 +41,6 @@ public class InputHandler : MonoBehaviour
                     SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
                     pistoltimestamp = Time.time + GameManager.Instance.pistolfirerate;
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, combinedMask);
-                    print(hit.collider.gameObject.name);
                     if (hit.collider.gameObject.tag == "Enemy")
                     {
                         hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.doubledamagemodifier ? GameManager.Instance.pistoldamage * 2 : GameManager.Instance.pistoldamage);
