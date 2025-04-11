@@ -10,22 +10,22 @@ public class InputHandler : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Pistolmode;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Machinegunmode;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Shotgunmode;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.BlackHolemode;
-        }
+        // if (Input.GetKeyDown(KeyCode.Alpha1))
+        // {
+        //     GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Pistolmode;
+        // }
+        // if (Input.GetKeyDown(KeyCode.Alpha2))
+        // {
+        //     GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Machinegunmode;
+        // }
+        // if (Input.GetKeyDown(KeyCode.Alpha3))
+        // {
+        //     GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.Shotgunmode;
+        // }
+        // if (Input.GetKeyDown(KeyCode.Alpha4))
+        // {
+        //     GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.BlackHolemode;
+        // }
 
         LayerMask enemyLayer = LayerMask.GetMask("Enemy");
         LayerMask pickupLayer = LayerMask.GetMask("PickUp");
