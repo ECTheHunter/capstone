@@ -1828,14 +1828,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouncer
       objectReference: {fileID: 0}
-    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
-      propertyPath: minumumscale
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7329265040855223371, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
-      propertyPath: detectiondistance
-      value: 2.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
