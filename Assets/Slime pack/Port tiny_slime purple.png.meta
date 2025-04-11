@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Port tiny_slime purple_0: 147309473450812016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 
 public class PauseMenu : MonoBehaviour
 {
@@ -49,5 +52,11 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Exiting FUCKING Game.");
         Application.Quit();
+    }
+
+    public void Home()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene("MainMenu");
     }
 }

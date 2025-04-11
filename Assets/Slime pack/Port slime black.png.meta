@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Port slime black_0: -4131429394957365873
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

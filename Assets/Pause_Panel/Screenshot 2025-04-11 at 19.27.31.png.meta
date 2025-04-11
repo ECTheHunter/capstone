@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f86c040adc2bc6c4f86d4ae8f738964f
+guid: f3b849f3ebe5649ce8912cb195b03b07
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9042650281751749264
-    second: Port tiny_slime green_0
+      213: -18295490307179639
+    second: Screenshot 2025-04-11 at 19.27.31_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Port tiny_slime green_0
+      name: Screenshot 2025-04-11 at 19.27.31_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 10
-        width: 39
-        height: 30
+        x: 0
+        y: 0
+        width: 586
+        height: 164
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 09226ef6582fd7d70800000000000000
-      internalID: 9042650281751749264
+      spriteID: 98bbf3739500fbff0800000000000000
+      internalID: -18295490307179639
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Port tiny_slime green_0: 9042650281751749264
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
