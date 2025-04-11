@@ -219,6 +219,8 @@ MonoBehaviour:
   health: 3
   damage: 3
   spriteRenderer: {fileID: 3942594517641617611}
+  originalMaterial: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
 --- !u!58 &297381150118564354
 CircleCollider2D:
   m_ObjectHideFlags: 0

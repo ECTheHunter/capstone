@@ -150,6 +150,8 @@ MonoBehaviour:
   health: 3
   damage: 1
   spriteRenderer: {fileID: 4902973106728810648}
+  originalMaterial: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
 --- !u!61 &2969660546817592559
 BoxCollider2D:
   m_ObjectHideFlags: 0

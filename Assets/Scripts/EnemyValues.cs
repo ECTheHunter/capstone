@@ -16,6 +16,13 @@ public class EnemyValues : MonoBehaviour
     public float health;
     public float damage;
     public SpriteRenderer spriteRenderer;
+    public Material originalMaterial;
+    public Material flashMaterial;
+    void Start()
+    {
+        originalMaterial = spriteRenderer.material;
+    }
+
     private void Update()
     {
         if (health <= 0)
@@ -29,24 +36,22 @@ public class EnemyValues : MonoBehaviour
         GetComponent<EnemyValues>().health -= damage;
     }
     private IEnumerator FlashRoutine()
-{
-    print("FLASH");
-    Color originalColor = spriteRenderer.color;
-
-    for (int i = 0; i < 3; i++)
     {
-        spriteRenderer.color = Color.white;
-        yield return new WaitForSeconds(1f);
-        spriteRenderer.color = originalColor;
-        yield return new WaitForSeconds(1f);
+
+        for (int i = 0; i < 3; i++)
+        {
+            spriteRenderer.material = flashMaterial;
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.material = originalMaterial;
+            yield return new WaitForSeconds(0.1f);
+        }
     }
-}
     public void RandomPickUp()
     {
         int randomValue = Random.Range(1, 101); // 0, 1, or 2
 
         GameObject prefabToSpawn = null;
-       
+
         if (randomValue > 1 && randomValue < 40)
         {
             prefabToSpawn = null;
