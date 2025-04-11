@@ -18,16 +18,18 @@ public class EnemyValues : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Material originalMaterial;
     public Material flashMaterial;
+    public Animator animator;
     void Start()
     {
         originalMaterial = spriteRenderer.material;
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (health <= 0)
         {
-            DestroyEnemy();
+            animator.SetTrigger("Die");
         }
     }
     public void EatDamage(float damage)
