@@ -1037,6 +1037,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd87d464b0caee64abd6f2a197b8ff1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1122222144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+  m_PrefabInstance: {fileID: 1995722058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1122222150
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122222144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 816c3492bc2431a4ebd6610c439ae65e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1269462764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,6 +1824,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 3024921485087854287, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 876af9d3ba0d54240a4f9b87b3ee31f2, type: 2}
     - target: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
       propertyPath: m_Name
       value: Bouncer
@@ -1804,7 +1835,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1122222150}
   m_SourcePrefab: {fileID: 100100000, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
 --- !u!1001 &4169976408826090262
 PrefabInstance:
