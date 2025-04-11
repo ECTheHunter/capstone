@@ -30,6 +30,7 @@ public class EnemyValues : MonoBehaviour
     }
     private IEnumerator FlashRoutine()
 {
+    print("FLASH");
     Color originalColor = spriteRenderer.color;
 
     for (int i = 0; i < 3; i++)
