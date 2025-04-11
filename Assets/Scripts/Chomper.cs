@@ -10,6 +10,10 @@ public class Chomper : MonoBehaviour
             StartCoroutine(ApplyDamageOverTime(collision2D.gameObject.GetComponent<Health>()));
         }
     }
+    private void OCollisionExit2D(Collision2D collision2D)
+    {
+        StopAllCoroutines();
+    }
 
     private void OnCollisonExit2D(Collision2D collision2D)
     {
