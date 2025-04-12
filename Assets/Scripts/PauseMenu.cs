@@ -11,7 +11,6 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            print("yooooooooooooooooooo");
             if (isPaused)
             {
                 ResumeGame();
@@ -23,9 +22,6 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-   public void T(){
-    print("aaaaaaaaaaaaaaaaaaaaaaaaaaa");
-   }
     public void ResumeGame()
     {
         pauseUI.SetActive(false);
