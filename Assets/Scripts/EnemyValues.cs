@@ -19,6 +19,7 @@ public class EnemyValues : MonoBehaviour
     public Material originalMaterial;
     public Material flashMaterial;
     public Animator animator;
+    public int enemyscore;
     void Awake()
     {
         originalMaterial = spriteRenderer.material;
@@ -92,6 +93,7 @@ public class EnemyValues : MonoBehaviour
                 SoundManager.Instance.PlaySound(SoundManager.Instance.chomperDestroyedClip);
                 break;
         }
+        GameManager.Instance.playerscore += enemyscore;
         RandomPickUp();
         Destroy(gameObject);
     }

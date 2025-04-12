@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public int blackholeammo = 0;
     public bool doubledamagemodifier;
     public float doubleDamageDuration;
+    public int playerscore = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

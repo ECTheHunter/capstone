@@ -243,6 +243,7 @@ MonoBehaviour:
   originalMaterial: {fileID: 0}
   flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
   animator: {fileID: 2601081176988371920}
+  enemyscore: 2
 --- !u!95 &2601081176988371920
 Animator:
   serializedVersion: 7
