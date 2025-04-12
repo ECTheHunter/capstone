@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4903789816461388248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 422801061711976566}
+  - component: {fileID: 8984984135218245648}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &422801061711976566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4903789816461388248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5042439, y: -2.498738, z: 0.100336306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8984984135218245648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4903789816461388248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ffa98bb0d6ed9f488c6577203378e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthvalue: 100
+  player: {fileID: 0}
+  pistoldamage: 1
+  machinegundamage: 0.5
+  shotgundamage: 2
+  weaponmode: 0
+  machinegunfirerate: 0.1
+  pistolfirerate: 0.65
+  shotgunfirerate: 1.35
+  blackholefirerate: 1
+  shotgunpellets: 12
+  shotgunspread: 0.45
+  blackholeinstance: {fileID: 8350653574753604084, guid: 76d183778c813fc49b12d3f2ed5c96c8, type: 3}
+  healthpickup: {fileID: 6996289769472307816, guid: d996da14248be844e98d2c5d023b43bf, type: 3}
+  ammopickup: {fileID: 8305783697267056749, guid: 7bbd4bd23025ca54ca588acb4f2ecc96, type: 3}
+  doubledamage: {fileID: 5758876792652276952, guid: aa5ea3928d3851b41a4133f2c676af1d, type: 3}
+  shotgunammo: 0
+  machinegunammo: 0
+  blackholeammo: 0
+  doubledamagemodifier: 0
+  doubleDamageDuration: 5
