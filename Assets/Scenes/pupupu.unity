@@ -9969,6 +9969,7 @@ GameObject:
   - component: {fileID: 2074272048}
   - component: {fileID: 2074272047}
   - component: {fileID: 2074272049}
+  - component: {fileID: 2074272050}
   m_Layer: 5
   m_Name: Gun Panels
   m_TagString: Untagged
@@ -10047,6 +10048,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunUI: {fileID: 2074272045}
+--- !u!114 &2074272050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074272045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ffa98bb0d6ed9f488c6577203378e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthvalue: 0
+  player: {fileID: 0}
+  pistoldamage: 0
+  machinegundamage: 0
+  shotgundamage: 0
+  weaponmode: 0
+  machinegunfirerate: 0
+  pistolfirerate: 0
+  shotgunfirerate: 0
+  blackholefirerate: 0
+  shotgunpellets: 0
+  shotgunspread: 0
+  blackholeinstance: {fileID: 0}
+  healthpickup: {fileID: 0}
+  ammopickup: {fileID: 0}
+  doubledamage: {fileID: 0}
+  shotgunammo: 0
+  machinegunammo: 0
+  blackholeammo: 0
+  doubledamagemodifier: 0
+  doubleDamageDuration: 0
 --- !u!1 &2074554878
 GameObject:
   m_ObjectHideFlags: 0
