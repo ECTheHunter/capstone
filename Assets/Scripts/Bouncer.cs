@@ -121,11 +121,6 @@ public class Bouncer : MonoBehaviour
         enemyValues1.damage = GetComponent<EnemyValues>().damage * splitfactor;
         enemyValues2.damage = GetComponent<EnemyValues>().damage * splitfactor;
 
-
-
-
-
-
         // Set the direction of the new bouncers within -45 to 45 degrees
         float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-30f, 30f);
         float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-30f, 30f);

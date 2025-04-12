@@ -62,9 +62,5 @@ public class EnemyAI : MonoBehaviour
         }
 
     }
-    void Update()
-    {
-        
-    }
  
 }

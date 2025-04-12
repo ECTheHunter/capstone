@@ -4,10 +4,6 @@ using UnityEngine;
 public class Chomper : MonoBehaviour
 {
     public Animator animator;
-    void Awake()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.tag == "Player") // or enemy, etc.

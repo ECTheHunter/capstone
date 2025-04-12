@@ -8,6 +8,7 @@ public class InputHandler : MonoBehaviour
     private float shotguntimestamp;
     private float blackholetimestamp;
     void Update()
+    
     {
 
         LayerMask enemyLayer = LayerMask.GetMask("Enemy");
