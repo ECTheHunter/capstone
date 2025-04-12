@@ -6,33 +6,21 @@ public class Health : MonoBehaviour
     [SerializeField] public Image healthBarFill;
     [SerializeField] public Gradient colorGradient;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    void Update()
     {
-        Debug.Log($"Collided with: {collision.gameObject.name}, Tag: {collision.tag}");
-
-        // Eğer çarpışan nesne bir Enemy ise
-        if (collision.CompareTag("Projectile"))
-        {
-            EnemyValues enemyValues = collision.GetComponent<EnemyValues>();
-            if (enemyValues != null)
-            {
-                float damage = enemyValues.damage; // Enemy'nin damage değerini al
-                DoDamage(damage);
-            }
-        }
+        UpdateHealthBar();
     }
 
     public void DoDamage(float damage)
     {
         GameManager.Instance.healthvalue -= damage;
-        GameManager.Instance.healthvalue = Mathf.Clamp(GameManager.Instance.healthvalue, 0, 100);
 
         if (GameManager.Instance.healthvalue == 0)
         {
             Die();
         }
 
-        UpdateHealthBar();
+        
     }
 
     public void UpdateHealthBar()
