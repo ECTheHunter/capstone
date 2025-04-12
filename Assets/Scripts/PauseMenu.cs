@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseUI;
@@ -49,5 +50,10 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Exiting FUCKING Game.");
         Application.Quit();
+    }
+
+    public void Home()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
