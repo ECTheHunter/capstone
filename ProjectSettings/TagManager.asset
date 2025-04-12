@@ -8,6 +8,7 @@ TagManager:
   - Border
   - Projectile
   - PickUp
+  - Obstacle
   layers:
   - Default
   - TransparentFX
