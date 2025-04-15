@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] public Image healthBarFill;
     [SerializeField] public Gradient colorGradient;
+    [SerializeField] public TextMeshProUGUI healthText;
 
     void Update()
     {
@@ -29,6 +31,7 @@ public class Health : MonoBehaviour
         {
             healthBarFill.fillAmount = GameManager.Instance.healthvalue / 100f;
             healthBarFill.color = colorGradient.Evaluate(healthBarFill.fillAmount);
+             healthText.text = $"Health: {GameManager.Instance.healthvalue}";
         }
         else
         {
