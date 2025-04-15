@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"Score: {GameManager.Instance.playerscore}";
+            scoreText.text = $"{GameManager.Instance.playerscore}";
         }
         else
         {
