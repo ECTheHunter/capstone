@@ -192,6 +192,38 @@ PrefabInstance:
       propertyPath: healthBarFill
       value: 
       objectReference: {fileID: 556056124}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key1.g
+      value: 0.93180156
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4282420332710012247, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
       propertyPath: m_Name
       value: Player
