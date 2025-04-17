@@ -5,6 +5,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject enemy;
     [SerializeField] private float spawnrate;
+    [SerializeField] private float diffucultyrate;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
