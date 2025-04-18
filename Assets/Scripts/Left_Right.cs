@@ -7,6 +7,7 @@ public class Left_Right : MonoBehaviour
     [SerializeField] private float shootrate;
     [SerializeField] private GameObject projectile;
     [SerializeField] private Animator animator;
+    [SerializeField] private bool l_r;
     private float nextShootTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,15 +20,30 @@ public class Left_Right : MonoBehaviour
     void Update()
     {
         Vector3 dir = Vector3.zero;
-        if (directionleft)
+        if (l_r)
         {
-            dir = Vector2.left * speed * Time.deltaTime;
+            if (directionleft)
+            {
+                dir = Vector2.left * speed * Time.deltaTime;
+            }
+            else
+            {
+                dir = Vector2.right * speed * Time.deltaTime;
+            }
+            transform.Translate(dir);
         }
         else
         {
-            dir = Vector2.right * speed * Time.deltaTime;
+            if (directionleft)
+            {
+                dir = Vector2.up * speed * Time.deltaTime;
+            }
+            else
+            {
+                dir = Vector2.down * speed * Time.deltaTime;
+            }
+            transform.Translate(dir);
         }
-        transform.Translate(dir);
         if (Time.time >= nextShootTime)
         {
             animator.SetTrigger("Shoot");
