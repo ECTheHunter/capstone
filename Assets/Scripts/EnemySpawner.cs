@@ -10,13 +10,18 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float chomperenemycost;
     [SerializeField] private GameObject enemy;
     [SerializeField] private float spawnrate;
+    [SerializeField] private float spawnratevariance;
     [SerializeField] private float diffucultyrate;
+    [SerializeField] private GameObject regularenemy;
+    [SerializeField] private GameObject bouncer;
+    [SerializeField] private GameObject chomper;
+    [SerializeField] private GameObject l_r;
     [SerializeField] List<GameObject> spawnpoints = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(SpawnEnemy());
+
     }
 
     // Update is called once per frame
@@ -24,12 +29,5 @@ public class EnemySpawner : MonoBehaviour
     {
 
     }
-    IEnumerator SpawnEnemy()
-    {
 
-        GameObject enemyobj = Instantiate(enemy, transform.position, transform.rotation);
-        yield return new WaitForSeconds(spawnrate);
-        StartCoroutine(SpawnEnemy());
-
-    }
 }

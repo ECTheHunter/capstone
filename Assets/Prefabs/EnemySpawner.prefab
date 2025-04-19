@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
+  inlockout: 0
 --- !u!1 &2242789781338031992
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 0
+  inlockout: 0
 --- !u!1 &3564937829063051521
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 0
+  inlockout: 0
 --- !u!1 &4660428991245275885
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +193,12 @@ MonoBehaviour:
   chomperenemycost: 0
   enemy: {fileID: 5369148182082062074, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
   spawnrate: 3
+  spawnratevariance: 0
   diffucultyrate: 0
+  regularenemy: {fileID: 5369148182082062074, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
+  bouncer: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
+  chomper: {fileID: 1169222416072926410, guid: 345e9163b5cc8b343bff79051c0115e1, type: 3}
+  l_r: {fileID: 3517173366335706791, guid: 778620ca4c1d4e6438c650f4fcff038a, type: 3}
   spawnpoints:
   - {fileID: 6218510601685294219}
   - {fileID: 4989779210118847081}
@@ -242,6 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
+  inlockout: 0
 --- !u!1 &6218510601685294219
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,3 +296,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
+  inlockout: 0
