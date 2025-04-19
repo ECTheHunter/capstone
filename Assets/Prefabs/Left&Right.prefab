@@ -109,6 +109,7 @@ MonoBehaviour:
   shootrate: 4
   projectile: {fileID: 195038184093328019, guid: 776b878f3a29aca429ac73ad2d15bade, type: 3}
   animator: {fileID: 3011420908258626026}
+  l_r: 0
 --- !u!50 &3947375185559353692
 Rigidbody2D:
   serializedVersion: 5
@@ -156,6 +157,7 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
   animator: {fileID: 3011420908258626026}
   enemyscore: 5
+  cost: 2
 --- !u!61 &2969660546817592559
 BoxCollider2D:
   m_ObjectHideFlags: 0

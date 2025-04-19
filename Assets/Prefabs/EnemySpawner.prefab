@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
-  inlockout: 0
 --- !u!1 &2242789781338031992
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 0
-  inlockout: 0
 --- !u!1 &3564937829063051521
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 0
-  inlockout: 0
 --- !u!1 &4660428991245275885
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,13 +184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7edc95c1e426d845b7282ec9e9eef67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regularenemycost: 0
-  l_renemycost: 0
-  bouncerenemycost: 0
-  chomperenemycost: 0
   spawnrate: 2
   spawnratevariance: 1
-  diffucultyrate: 0
+  diffucultyrate: 3
   spawnfactor: 0
   regularenemy: {fileID: 5369148182082062074, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
   bouncer: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
@@ -250,7 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
-  inlockout: 0
 --- !u!1 &6218510601685294219
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,4 +288,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
-  inlockout: 0

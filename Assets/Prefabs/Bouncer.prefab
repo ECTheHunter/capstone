@@ -137,6 +137,7 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
   animator: {fileID: 5994469770969200243}
   enemyscore: 1
+  cost: 1
 --- !u!58 &297381150118564354
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public float doubleDamageDuration;
     public int playerscore = 0;
     public int level = 1;
+    public int enemycount = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

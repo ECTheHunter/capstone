@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private float regularenemycost;
-    [SerializeField] private float l_renemycost;
-    [SerializeField] private float bouncerenemycost;
-    [SerializeField] private float chomperenemycost;
+
     [SerializeField] private float spawnrate;
     [SerializeField] private float spawnratevariance;
     [SerializeField] private float diffucultyrate;
@@ -29,11 +26,17 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         float randomVariance = Random.Range(-spawnratevariance, spawnratevariance);
-        if (Time.time > spawntimestamp)
+        float minValue = Mathf.Min(regularenemy.GetComponent<EnemyValues>().cost, bouncer.GetComponent<EnemyValues>().cost, chomper.GetComponent<EnemyValues>().cost, l_r.GetComponent<EnemyValues>().cost);
+        if (diffucultyrate >= minValue)
         {
-
-            spawntimestamp = Time.time + spawnrate + randomVariance;
+            if (Time.time > spawntimestamp)
+            {
+                print(EnemyPicker().name);
+                spawntimestamp = Time.time + spawnrate + randomVariance;
+            }
         }
+
+
     }
     private Transform RandomSpawnPoint()
     {
@@ -42,7 +45,26 @@ public class EnemySpawner : MonoBehaviour
     }
     private GameObject EnemyPicker()
     {
+        List<GameObject> affordableEnemies = new List<GameObject>();
+
+        if (diffucultyrate >= regularenemy.GetComponent<EnemyValues>().cost)
+            affordableEnemies.Add(regularenemy);
+        if (diffucultyrate >= bouncer.GetComponent<EnemyValues>().cost)
+            affordableEnemies.Add(bouncer);
+        if (diffucultyrate >= chomper.GetComponent<EnemyValues>().cost)
+            affordableEnemies.Add(chomper);
+        if (diffucultyrate >= l_r.GetComponent<EnemyValues>().cost)
+            affordableEnemies.Add(l_r);
+
+        if (affordableEnemies.Count > 0)
+        {
+            GameObject selected = affordableEnemies[Random.Range(0, affordableEnemies.Count)];
+            diffucultyrate -= selected.GetComponent<EnemyValues>().cost;
+            return selected;
+        }
+
         return null;
     }
+
 
 }

@@ -20,6 +20,7 @@ public class EnemyValues : MonoBehaviour
     public Material flashMaterial;
     public Animator animator;
     public int enemyscore;
+    public float cost;
     void Awake()
     {
         originalMaterial = spriteRenderer.material;
