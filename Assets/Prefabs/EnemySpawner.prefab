@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5993050976425690353}
+  - component: {fileID: 3952775018142420079}
   m_Layer: 0
   m_Name: SpawnPoint3
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9080812602909192781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3952775018142420079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953367957669349575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67553aad2cded8419de619a8899cde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isvertical: 1
 --- !u!1 &2242789781338031992
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5864566102174816221}
+  - component: {fileID: 6668132294607138621}
   m_Layer: 0
   m_Name: SpawnPoint4
   m_TagString: Untagged
@@ -62,6 +77,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9080812602909192781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6668132294607138621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242789781338031992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67553aad2cded8419de619a8899cde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isvertical: 0
 --- !u!1 &3564937829063051521
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905904202150563562}
+  - component: {fileID: 8211262040440496311}
   m_Layer: 0
   m_Name: SpawnPoint5
   m_TagString: Untagged
@@ -93,6 +122,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9080812602909192781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8211262040440496311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3564937829063051521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67553aad2cded8419de619a8899cde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isvertical: 0
 --- !u!1 &4660428991245275885
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,9 +184,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7edc95c1e426d845b7282ec9e9eef67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regularenemycost: 0
+  l_renemycost: 0
+  bouncerenemycost: 0
+  chomperenemycost: 0
   enemy: {fileID: 5369148182082062074, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
   spawnrate: 3
   diffucultyrate: 0
+  spawnpoints:
+  - {fileID: 6218510601685294219}
+  - {fileID: 4989779210118847081}
+  - {fileID: 953367957669349575}
+  - {fileID: 2242789781338031992}
+  - {fileID: 3564937829063051521}
 --- !u!1 &4989779210118847081
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5789167527715497413}
+  - component: {fileID: 4294976772688488020}
   m_Layer: 0
   m_Name: SpawnPoint2
   m_TagString: Untagged
@@ -176,6 +229,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9080812602909192781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4294976772688488020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989779210118847081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67553aad2cded8419de619a8899cde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isvertical: 1
 --- !u!1 &6218510601685294219
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210858023421132352}
+  - component: {fileID: 1606323720946405300}
   m_Layer: 0
   m_Name: SpawnPoint1
   m_TagString: Untagged
@@ -207,3 +274,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 9080812602909192781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1606323720946405300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6218510601685294219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67553aad2cded8419de619a8899cde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isvertical: 1
