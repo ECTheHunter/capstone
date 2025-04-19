@@ -1207,22 +1207,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1519367147732550699, guid: 9929eff6d8262ab4294af22ef49a7d04, type: 3}
-      propertyPath: l_r
-      value: 
-      objectReference: {fileID: 3517173366335706791, guid: 778620ca4c1d4e6438c650f4fcff038a, type: 3}
-    - target: {fileID: 1519367147732550699, guid: 9929eff6d8262ab4294af22ef49a7d04, type: 3}
-      propertyPath: bouncer
-      value: 
-      objectReference: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
-    - target: {fileID: 1519367147732550699, guid: 9929eff6d8262ab4294af22ef49a7d04, type: 3}
-      propertyPath: chomper
-      value: 
-      objectReference: {fileID: 1169222416072926410, guid: 345e9163b5cc8b343bff79051c0115e1, type: 3}
-    - target: {fileID: 1519367147732550699, guid: 9929eff6d8262ab4294af22ef49a7d04, type: 3}
-      propertyPath: regularenemy
-      value: 
-      objectReference: {fileID: 5369148182082062074, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
     - target: {fileID: 4660428991245275885, guid: 9929eff6d8262ab4294af22ef49a7d04, type: 3}
       propertyPath: m_Name
       value: EnemySpawner

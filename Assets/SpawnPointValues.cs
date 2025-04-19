@@ -3,7 +3,6 @@ using UnityEngine;
 public class SpawnPointValues : MonoBehaviour
 {
     public bool isvertical;
-    public bool inlockout;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

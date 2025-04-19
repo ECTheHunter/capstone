@@ -191,10 +191,10 @@ MonoBehaviour:
   l_renemycost: 0
   bouncerenemycost: 0
   chomperenemycost: 0
-  enemy: {fileID: 5369148182082062074, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
-  spawnrate: 3
-  spawnratevariance: 0
+  spawnrate: 2
+  spawnratevariance: 1
   diffucultyrate: 0
+  spawnfactor: 0
   regularenemy: {fileID: 5369148182082062074, guid: 704450f4f56dad248837ed7cb6382d68, type: 3}
   bouncer: {fileID: 4913959121887310431, guid: 7729dea225b256a4d84a3514a47cea0d, type: 3}
   chomper: {fileID: 1169222416072926410, guid: 345e9163b5cc8b343bff79051c0115e1, type: 3}
