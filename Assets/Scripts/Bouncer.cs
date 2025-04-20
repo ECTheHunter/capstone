@@ -25,7 +25,7 @@ public class Bouncer : MonoBehaviour
             float angleOffset = Random.Range(-20f, 20f); // Random offset within -45 to 45 degrees
             if (isvertical)
             {
-                if (directionleft)
+                if (!directionleft)
                 {
                     direction = Quaternion.Euler(0, 0, angleOffset) * transform.up * -1; // Use transform.right as the base direction
                     direction = direction.normalized;

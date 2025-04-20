@@ -88,8 +88,10 @@ MonoBehaviour:
   bouncerPrefab: {fileID: 4913959121887310431}
   spawnpoint1: {fileID: 706512735265388796}
   isminion: 0
-  detectiondistance: 3
+  detectiondistance: 2.5
   minumumscale: 3.75
+  isvertical: 1
+  directionleft: 0
 --- !u!50 &7765563836872619277
 Rigidbody2D:
   serializedVersion: 5

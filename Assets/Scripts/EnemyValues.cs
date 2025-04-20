@@ -95,6 +95,7 @@ public class EnemyValues : MonoBehaviour
                 break;
         }
         GameManager.Instance.playerscore += enemyscore;
+        GameManager.Instance.enemycount--;
         RandomPickUp();
         Destroy(gameObject);
     }

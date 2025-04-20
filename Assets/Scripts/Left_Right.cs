@@ -35,7 +35,7 @@ public class Left_Right : MonoBehaviour
         }
         else
         {
-            if (!directionleft)
+            if (directionleft)
             {
                 dir = transform.up * speed * Time.deltaTime;
             }

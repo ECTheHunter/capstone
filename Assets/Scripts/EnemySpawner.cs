@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        ResetTotalPoints();
     }
 
     // Update is called once per frame
@@ -39,6 +39,14 @@ public class EnemySpawner : MonoBehaviour
                     if (spawnpoint.GetComponent<SpawnPointValues>().isvertical)
                     {
                         enemy.GetComponent<Left_Right>().l_r = false;
+                         if (spawnpoint.GetComponent<SpawnPointValues>().directionleft)
+                        {
+                            enemy.GetComponent<Left_Right>().directionleft = true;
+                        }
+                        else
+                        {
+                            enemy.GetComponent<Left_Right>().directionleft = false;
+                        }
                     }
                     else
                     {
@@ -59,6 +67,14 @@ public class EnemySpawner : MonoBehaviour
                     if (spawnpoint.GetComponent<SpawnPointValues>().isvertical)
                     {
                         enemy.GetComponent<Bouncer>().isvertical = true;
+                         if (spawnpoint.GetComponent<SpawnPointValues>().directionleft)
+                        {
+                            enemy.GetComponent<Bouncer>().directionleft = true;
+                        }
+                        else
+                        {
+                            enemy.GetComponent<Bouncer>().directionleft = false;
+                        }
                     }
                     else
                     {
@@ -75,11 +91,21 @@ public class EnemySpawner : MonoBehaviour
 
                 }
                 Instantiate(enemy, spawnpoint.transform.position, Quaternion.identity);
+                GameManager.Instance.enemycount++;
                 spawntimestamp = Time.time + spawnrate + randomVariance;
             }
         }
+        if (diffucultyrate <= 0 && GameManager.Instance.enemycount <= 0)
+        {
+            GameManager.Instance.level++;
+            ResetTotalPoints();
+        }
 
 
+    }
+    private void ResetTotalPoints()
+    {
+        diffucultyrate = spawnfactor * GameManager.Instance.level;
     }
     private GameObject RandomSpawnPoint()
     {
