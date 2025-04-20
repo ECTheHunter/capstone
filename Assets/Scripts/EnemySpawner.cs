@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject bouncer;
     [SerializeField] private GameObject chomper;
     [SerializeField] private GameObject l_r;
+    [SerializeField] private float basefactor;
     [SerializeField] List<GameObject> spawnpoints = new List<GameObject>();
     private float spawntimestamp;
 
@@ -105,7 +106,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private void ResetTotalPoints()
     {
-        diffucultyrate = spawnfactor * GameManager.Instance.level;
+        diffucultyrate = basefactor + spawnfactor * GameManager.Instance.level;
     }
     private GameObject RandomSpawnPoint()
     {
