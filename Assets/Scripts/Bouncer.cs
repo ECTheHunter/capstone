@@ -162,8 +162,8 @@ public class Bouncer : MonoBehaviour
         bouncerScript2.isminion = true;
         bouncerScript1.SetDirection(new Vector2(Mathf.Cos(angle1 * Mathf.Deg2Rad), Mathf.Sin(angle1 * Mathf.Deg2Rad)).normalized);
         bouncerScript2.SetDirection(new Vector2(Mathf.Cos(angle2 * Mathf.Deg2Rad), Mathf.Sin(angle2 * Mathf.Deg2Rad)).normalized);
-        bouncerScript1.enabled = true;
-        bouncerScript2.enabled = true;
+        bouncerScript1.hasSplit = false;
+        bouncerScript2.hasSplit = false;
 
 
         Destroy(gameObject);
