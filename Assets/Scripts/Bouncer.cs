@@ -57,28 +57,39 @@ public class Bouncer : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
     }
     void Update()
+{
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    transform.rotation = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
+
+    int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
+
+    // Center Ray
+    RaycastHit2D centerHit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);
+
+    // Left Ray
+    Vector2 leftDirection = Quaternion.Euler(0, 0, -90) * direction;
+    RaycastHit2D leftHit = Physics2D.Raycast(transform.position, leftDirection, detectiondistance, ignoreEnemyLayer);
+
+    // Right Ray
+    Vector2 rightDirection = Quaternion.Euler(0, 0, 90) * direction;
+    RaycastHit2D rightHit = Physics2D.Raycast(transform.position, rightDirection, detectiondistance, ignoreEnemyLayer);
+
+    // Debug rays
+    Debug.DrawRay(transform.position, direction, Color.white);
+    Debug.DrawRay(transform.position, leftDirection, Color.red);
+    Debug.DrawRay(transform.position, rightDirection, Color.green);
+
+    // Check raycast hits
+    cansplit = false;
+
+    if ((centerHit.collider != null && centerHit.collider.CompareTag("Border")) ||
+        (leftHit.collider != null && leftHit.collider.CompareTag("Border")) ||
+        (rightHit.collider != null && rightHit.collider.CompareTag("Border")))
     {
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
-
-        int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);
-
-        Debug.DrawRay(transform.position, direction);
-        if (hit.collider == null)
-        {
-            cansplit = false;
-        }
-        if (hit.collider != null && hit.collider.tag == "Border")
-        {
-            cansplit = true;
-        }
-        else
-        {
-            cansplit = false;
-        }
-
+        cansplit = true;
     }
+}
+
     // Update is called once per frame
     void FixedUpdate()
     {
