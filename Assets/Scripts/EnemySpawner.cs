@@ -29,19 +29,34 @@ public class EnemySpawner : MonoBehaviour
         float minValue = Mathf.Min(regularenemy.GetComponent<EnemyValues>().cost, bouncer.GetComponent<EnemyValues>().cost, chomper.GetComponent<EnemyValues>().cost, l_r.GetComponent<EnemyValues>().cost);
         if (diffucultyrate >= minValue)
         {
+
             if (Time.time > spawntimestamp)
             {
-                print(EnemyPicker().name);
+                GameObject enemy = EnemyPicker();
+                GameObject spawnpoint = RandomSpawnPoint();
+                if (enemy.GetComponent<Left_Right>() != null)
+                {
+                    if (spawnpoint.GetComponent<SpawnPointValues>().isvertical)
+                    {
+                        enemy.GetComponent<Left_Right>().l_r = false;
+                    }
+                    else
+                    {
+                        enemy.GetComponent<Left_Right>().l_r = true;
+                    }
+
+                }
+                Instantiate(enemy, spawnpoint.transform.position, Quaternion.identity);
                 spawntimestamp = Time.time + spawnrate + randomVariance;
             }
         }
 
 
     }
-    private Transform RandomSpawnPoint()
+    private GameObject RandomSpawnPoint()
     {
         int randompoint = Random.Range(0, 5);
-        return spawnpoints[randompoint].transform;
+        return spawnpoints[randompoint];
     }
     private GameObject EnemyPicker()
     {

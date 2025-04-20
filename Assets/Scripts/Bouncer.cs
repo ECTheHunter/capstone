@@ -20,7 +20,7 @@ public class Bouncer : MonoBehaviour
     {
         if (!isminion)
         {
-            float angleOffset = Random.Range(-30f, 30f); // Random offset within -45 to 45 degrees
+            float angleOffset = Random.Range(-20f, 20f); // Random offset within -45 to 45 degrees
             direction = Quaternion.Euler(0, 0, angleOffset) * transform.up * -1; // Use transform.right as the base direction
             direction = direction.normalized;
         }
@@ -122,8 +122,8 @@ public class Bouncer : MonoBehaviour
         enemyValues2.damage = GetComponent<EnemyValues>().damage * splitfactor;
 
         // Set the direction of the new bouncers within -45 to 45 degrees
-        float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-30f, 30f);
-        float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-30f, 30f);
+        float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-20f, 20f);
+        float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-20f, 20f);
         bouncerScript1.isminion = true;
         bouncerScript2.isminion = true;
         bouncerScript1.SetDirection(new Vector2(Mathf.Cos(angle1 * Mathf.Deg2Rad), Mathf.Sin(angle1 * Mathf.Deg2Rad)).normalized);

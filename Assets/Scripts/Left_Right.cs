@@ -7,7 +7,8 @@ public class Left_Right : MonoBehaviour
     [SerializeField] private float shootrate;
     [SerializeField] private GameObject projectile;
     [SerializeField] private Animator animator;
-    [SerializeField] private bool l_r;
+    public bool l_r;
+    [SerializeField] private bool inscene;
     private float nextShootTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,8 +58,14 @@ public class Left_Right : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "Border")
         {
+            if (!inscene)
+            {
+                inscene = true;
+                return;
+            }
             directionleft = !directionleft;
         }
     }
