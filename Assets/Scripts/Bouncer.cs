@@ -100,29 +100,35 @@ public class Bouncer : MonoBehaviour
         rb2D.AddForce(force);
     }
     public void OnTriggerEnter2D(Collider2D collision)
-{
-    if (collision.tag == "Border")
     {
-        if (!enteredscene)
+        if (collision.tag == "Border")
         {
-            enteredscene = true;
-            return;
+            if (!enteredscene)
+            {
+                enteredscene = true;
+                return;
+            }
+            else if (enteredscene)
+            {
+                if (!cansplit)
+                {
+                    return;
+                }
+                else if (cansplit)
+                {
+                    var firstcontact = collision.ClosestPoint(transform.position);
+                    var collisionNormal = ((Vector2)transform.position - firstcontact).normalized;
+                    Vector2 newVelocity = Vector2.Reflect(rb2D.linearVelocity.normalized, collisionNormal).normalized;
+                    direction = newVelocity;
+                    if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude)
+                        StartCoroutine(BounceOperation());
+                }
+
+
+            }
         }
 
-        if (enteredscene && cansplit && !hasSplit)
-        {
-            hasSplit = true; 
-            var firstcontact = collision.ClosestPoint(transform.position);
-            var collisionNormal = ((Vector2)transform.position - firstcontact).normalized;
-            Vector2 newVelocity = Vector2.Reflect(rb2D.linearVelocity.normalized, collisionNormal).normalized;
-            direction = newVelocity;
-
-            if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude)
-                StartCoroutine(BounceOperation());
-        }
     }
-}
-
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -162,8 +168,8 @@ public class Bouncer : MonoBehaviour
         bouncerScript2.isminion = true;
         bouncerScript1.SetDirection(new Vector2(Mathf.Cos(angle1 * Mathf.Deg2Rad), Mathf.Sin(angle1 * Mathf.Deg2Rad)).normalized);
         bouncerScript2.SetDirection(new Vector2(Mathf.Cos(angle2 * Mathf.Deg2Rad), Mathf.Sin(angle2 * Mathf.Deg2Rad)).normalized);
-        bouncerScript1.hasSplit = false;
-        bouncerScript2.hasSplit = false;
+        bouncerScript1.enabled = true;
+        bouncerScript2.enabled = true;
 
 
         Destroy(gameObject);
