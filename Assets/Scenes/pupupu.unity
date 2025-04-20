@@ -962,7 +962,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1519367147732550699, guid: 9929eff6d8262ab4294af22ef49a7d04, type: 3}
       propertyPath: spawnfactor
-      value: 45
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4660428991245275885, guid: 9929eff6d8262ab4294af22ef49a7d04, type: 3}
       propertyPath: m_Name
