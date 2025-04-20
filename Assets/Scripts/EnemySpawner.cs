@@ -54,6 +54,26 @@ public class EnemySpawner : MonoBehaviour
                     }
 
                 }
+                if (enemy.GetComponent<Bouncer>() != null)
+                {
+                    if (spawnpoint.GetComponent<SpawnPointValues>().isvertical)
+                    {
+                        enemy.GetComponent<Bouncer>().isvertical = true;
+                    }
+                    else
+                    {
+                        enemy.GetComponent<Bouncer>().isvertical = false;
+                        if (spawnpoint.GetComponent<SpawnPointValues>().directionleft)
+                        {
+                            enemy.GetComponent<Bouncer>().directionleft = true;
+                        }
+                        else
+                        {
+                            enemy.GetComponent<Bouncer>().directionleft = false;
+                        }
+                    }
+
+                }
                 Instantiate(enemy, spawnpoint.transform.position, Quaternion.identity);
                 spawntimestamp = Time.time + spawnrate + randomVariance;
             }

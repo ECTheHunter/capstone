@@ -14,6 +14,8 @@ public class Bouncer : MonoBehaviour
     [SerializeField] private bool isminion;
     [SerializeField] private float detectiondistance;
     [SerializeField] private float minumumscale;
+    public bool isvertical;
+    public bool directionleft;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,8 +23,33 @@ public class Bouncer : MonoBehaviour
         if (!isminion)
         {
             float angleOffset = Random.Range(-20f, 20f); // Random offset within -45 to 45 degrees
-            direction = Quaternion.Euler(0, 0, angleOffset) * transform.up * -1; // Use transform.right as the base direction
-            direction = direction.normalized;
+            if (isvertical)
+            {
+                if (directionleft)
+                {
+                    direction = Quaternion.Euler(0, 0, angleOffset) * transform.up * -1; // Use transform.right as the base direction
+                    direction = direction.normalized;
+                }
+                else
+                {
+                    direction = Quaternion.Euler(0, 0, angleOffset) * transform.up; // Use transform.right as the base direction
+                    direction = direction.normalized;
+                }
+            }
+            else
+            {
+                if (directionleft)
+                {
+                    direction = Quaternion.Euler(0, 0, angleOffset) * transform.right * -1; // Use transform.right as the base direction
+                    direction = direction.normalized;
+                }
+                else
+                {
+                    direction = Quaternion.Euler(0, 0, angleOffset) * transform.right; // Use transform.right as the base direction
+                    direction = direction.normalized;
+                }
+            }
+
         }
 
         Physics2D.IgnoreLayerCollision(7, 6);
