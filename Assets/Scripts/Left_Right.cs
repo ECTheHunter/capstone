@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Left_Right : MonoBehaviour
 {
-    [SerializeField] private bool directionleft;
+    public bool directionleft;
     [SerializeField] private float speed;
     [SerializeField] private float shootrate;
     [SerializeField] private GameObject projectile;
@@ -25,23 +25,23 @@ public class Left_Right : MonoBehaviour
         {
             if (directionleft)
             {
-                dir = Vector2.left * speed * Time.deltaTime;
+                dir = transform.right * -1 * speed * Time.deltaTime;
             }
             else
             {
-                dir = Vector2.right * speed * Time.deltaTime;
+                dir = transform.right * speed * Time.deltaTime;
             }
             transform.Translate(dir);
         }
         else
         {
-            if (directionleft)
+            if (!directionleft)
             {
-                dir = Vector2.up * speed * Time.deltaTime;
+                dir = transform.up * speed * Time.deltaTime;
             }
             else
             {
-                dir = Vector2.down * speed * Time.deltaTime;
+                dir = transform.up * -1 * speed * Time.deltaTime;
             }
             transform.Translate(dir);
         }

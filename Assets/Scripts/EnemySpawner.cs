@@ -43,6 +43,14 @@ public class EnemySpawner : MonoBehaviour
                     else
                     {
                         enemy.GetComponent<Left_Right>().l_r = true;
+                        if (spawnpoint.GetComponent<SpawnPointValues>().directionleft)
+                        {
+                            enemy.GetComponent<Left_Right>().directionleft = true;
+                        }
+                        else
+                        {
+                            enemy.GetComponent<Left_Right>().directionleft = false;
+                        }
                     }
 
                 }

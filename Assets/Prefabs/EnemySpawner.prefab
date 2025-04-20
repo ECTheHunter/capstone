@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
+  directionleft: 0
 --- !u!1 &2242789781338031992
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 0
+  directionleft: 0
 --- !u!1 &3564937829063051521
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,13 +117,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3564937829063051521}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 10, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9080812602909192781}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!114 &8211262040440496311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 0
+  directionleft: 1
 --- !u!1 &4660428991245275885
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
+  directionleft: 0
 --- !u!1 &6218510601685294219
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,3 +292,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isvertical: 1
+  directionleft: 0
