@@ -14,6 +14,8 @@ public class Bouncer : MonoBehaviour
     [SerializeField] private bool isminion;
     [SerializeField] private float detectiondistance;
     [SerializeField] private float minumumscale;
+    [SerializeField] private bool hasSplit = false;
+
     public bool isvertical;
     public bool directionleft;
 
@@ -57,38 +59,38 @@ public class Bouncer : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
     }
     void Update()
-{
-    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    transform.rotation = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
-
-    int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
-
-    // Center Ray
-    RaycastHit2D centerHit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);
-
-    // Left Ray
-    Vector2 leftDirection = Quaternion.Euler(0, 0, -90) * direction;
-    RaycastHit2D leftHit = Physics2D.Raycast(transform.position, leftDirection, detectiondistance, ignoreEnemyLayer);
-
-    // Right Ray
-    Vector2 rightDirection = Quaternion.Euler(0, 0, 90) * direction;
-    RaycastHit2D rightHit = Physics2D.Raycast(transform.position, rightDirection, detectiondistance, ignoreEnemyLayer);
-
-    // Debug rays
-    Debug.DrawRay(transform.position, direction, Color.white);
-    Debug.DrawRay(transform.position, leftDirection, Color.red);
-    Debug.DrawRay(transform.position, rightDirection, Color.green);
-
-    // Check raycast hits
-    cansplit = false;
-
-    if ((centerHit.collider != null && centerHit.collider.CompareTag("Border")) ||
-        (leftHit.collider != null && leftHit.collider.CompareTag("Border")) ||
-        (rightHit.collider != null && rightHit.collider.CompareTag("Border")))
     {
-        cansplit = true;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
+
+        int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
+
+        // Center Ray
+        RaycastHit2D centerHit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);
+
+        // Left Ray
+        Vector2 leftDirection = Quaternion.Euler(0, 0, -90) * direction;
+        RaycastHit2D leftHit = Physics2D.Raycast(transform.position, leftDirection, detectiondistance / 2, ignoreEnemyLayer);
+
+        // Right Ray
+        Vector2 rightDirection = Quaternion.Euler(0, 0, 90) * direction;
+        RaycastHit2D rightHit = Physics2D.Raycast(transform.position, rightDirection, detectiondistance / 2, ignoreEnemyLayer);
+
+        // Debug rays
+        Debug.DrawRay(transform.position, direction, Color.white);
+        Debug.DrawRay(transform.position, leftDirection, Color.red);
+        Debug.DrawRay(transform.position, rightDirection, Color.green);
+
+        // Check raycast hits
+        cansplit = false;
+
+        if ((centerHit.collider != null && centerHit.collider.CompareTag("Border")) ||
+            (leftHit.collider != null && leftHit.collider.CompareTag("Border")) ||
+            (rightHit.collider != null && rightHit.collider.CompareTag("Border")))
+        {
+            cansplit = true;
+        }
     }
-}
 
     // Update is called once per frame
     void FixedUpdate()
@@ -98,35 +100,29 @@ public class Bouncer : MonoBehaviour
         rb2D.AddForce(force);
     }
     public void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.tag == "Border")
     {
-        if (collision.tag == "Border")
+        if (!enteredscene)
         {
-            if (!enteredscene)
-            {
-                enteredscene = true;
-                return;
-            }
-            else if (enteredscene)
-            {
-                if (!cansplit)
-                {
-                    return;
-                }
-                else if (cansplit)
-                {
-                    var firstcontact = collision.ClosestPoint(transform.position);
-                    var collisionNormal = ((Vector2)transform.position - firstcontact).normalized;
-                    Vector2 newVelocity = Vector2.Reflect(rb2D.linearVelocity.normalized, collisionNormal).normalized;
-                    direction = newVelocity;
-                    if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude)
-                        StartCoroutine(BounceOperation());
-                }
-
-
-            }
+            enteredscene = true;
+            return;
         }
 
+        if (enteredscene && cansplit && !hasSplit)
+        {
+            hasSplit = true; 
+            var firstcontact = collision.ClosestPoint(transform.position);
+            var collisionNormal = ((Vector2)transform.position - firstcontact).normalized;
+            Vector2 newVelocity = Vector2.Reflect(rb2D.linearVelocity.normalized, collisionNormal).normalized;
+            direction = newVelocity;
+
+            if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude)
+                StartCoroutine(BounceOperation());
+        }
     }
+}
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -166,6 +162,8 @@ public class Bouncer : MonoBehaviour
         bouncerScript2.isminion = true;
         bouncerScript1.SetDirection(new Vector2(Mathf.Cos(angle1 * Mathf.Deg2Rad), Mathf.Sin(angle1 * Mathf.Deg2Rad)).normalized);
         bouncerScript2.SetDirection(new Vector2(Mathf.Cos(angle2 * Mathf.Deg2Rad), Mathf.Sin(angle2 * Mathf.Deg2Rad)).normalized);
+        bouncerScript1.enabled = true;
+        bouncerScript2.enabled = true;
 
 
         Destroy(gameObject);
