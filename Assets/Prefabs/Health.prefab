@@ -241,7 +241,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 5.2209997, y: 5.2209997, z: 5.2209997}
+  m_LocalScale: {x: 5.486, y: 5.486, z: 5.486}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 319455595053816195}
@@ -353,17 +353,17 @@ MonoBehaviour:
   healthBarFill: {fileID: 5644848250249818682}
   colorGradient:
     serializedVersion: 2
-    key0: {r: 0.8679245, g: 0.118725546, b: 0.14119275, a: 1}
-    key1: {r: 0.9609031, g: 0.990566, b: 0.023362402, a: 1}
-    key2: {r: 0.08896337, g: 0.9811321, b: 0.06016379, a: 0}
-    key3: {r: 0.08896337, g: 0.9811321, b: 0.06016379, a: 0}
+    key0: {r: 0.9433962, g: 0.07564971, b: 0.07564971, a: 1}
+    key1: {r: 0.9121155, g: 0.990566, b: 0, a: 1}
+    key2: {r: 0.8051435, g: 0.99275804, b: 0.7617101, a: 0}
+    key3: {r: 0.2384918, g: 0.9716981, b: 0.068752214, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 11758
-    ctime1: 39899
-    ctime2: 41827
+    ctime0: 11180
+    ctime1: 37779
+    ctime2: 37972
     ctime3: 65535
     ctime4: 0
     ctime5: 0
