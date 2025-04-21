@@ -73,8 +73,10 @@ public class Bouncer : MonoBehaviour
     {
         if (collision.tag == "Corner")
         {
-            direction = -direction;
+            Vector2 toCenter = (new Vector2(500f, 250f) - rb2D.position).normalized;
+            direction = toCenter;
             return;
+
         }
         if (collision.tag == "Border")
         {
