@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - PickUp
   - Obstacle
+  - Corner
   layers:
   - Default
   - TransparentFX

@@ -71,6 +71,11 @@ public class Bouncer : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Corner")
+        {
+            direction = -direction;
+            return;
+        }
         if (collision.tag == "Border")
         {
             if (!enteredscene)
