@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] public Gradient colorGradient;
     [SerializeField] public TextMeshProUGUI healthText;
 
-    [SerializeField] private GameOverPanel gameOverPanel;
+    [SerializeField] private GameObject gameOverPanel;
     private bool isDead = false;
 
     private void Start()
@@ -57,7 +57,8 @@ public class Health : MonoBehaviour
 
         if (gameOverPanel != null)
         {
-            gameOverPanel.ShowGameOverPanel(GameManager.Instance.playerscore, GameManager.Instance.level);
+             Time.timeScale = 0f; 
+            gameOverPanel.gameObject.SetActive(true);
         }
     }
 }
