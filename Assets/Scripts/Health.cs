@@ -8,6 +8,18 @@ public class Health : MonoBehaviour
     [SerializeField] public Gradient colorGradient;
     [SerializeField] public TextMeshProUGUI healthText;
 
+    private GameOverPanel gameOverPanel;
+
+    private void Start()
+    {
+        // GameOverPanel referansını al
+        gameOverPanel = FindObjectOfType<GameOverPanel>();
+
+        if (gameOverPanel == null)
+        {
+            Debug.LogError("GameOverPanel bulunamadı! Sahneye ekli mi?");
+        }
+    }
 
     void Update()
     {
@@ -18,12 +30,10 @@ public class Health : MonoBehaviour
     {
         GameManager.Instance.healthvalue -= damage;
 
-        if (GameManager.Instance.healthvalue == 0)
+        if (GameManager.Instance.healthvalue <= 0)
         {
             Die();
         }
-
-        
     }
 
     public void UpdateHealthBar()
@@ -43,5 +53,11 @@ public class Health : MonoBehaviour
     public void Die()
     {
         Debug.Log("Player has died.");
+
+        if (gameOverPanel != null)
+        {
+            // Game Over panelini göster
+            gameOverPanel.ShowGameOverPanel(GameManager.Instance.playerscore, GameManager.Instance.level);
+        }
     }
 }
