@@ -22,16 +22,27 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-  
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         musicSource.clip = music;
+
         musicSource.Play();
     }
     private void Update()
     {
-
+        if (GameManager.Instance.healthvalue <= 0)
+            musicSource.Stop();
     }
     public void PlaySound(AudioClip sound)
     {
-        sfxSource.PlayOneShot(sound);
+        if (GameManager.Instance.healthvalue > 0)
+            sfxSource.PlayOneShot(sound);
     }
 }
