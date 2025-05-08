@@ -1190,6 +1190,7 @@ GameObject:
   - component: {fileID: 335985151}
   - component: {fileID: 335985154}
   - component: {fileID: 335985153}
+  - component: {fileID: 335985155}
   m_Layer: 5
   m_Name: Game Over Panel
   m_TagString: Untagged
@@ -1214,7 +1215,7 @@ RectTransform:
   - {fileID: 978386709}
   - {fileID: 1719982153}
   - {fileID: 1918957872}
-  m_Father: {fileID: 1151861700}
+  m_Father: {fileID: 1425477025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1234,7 +1235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.8352941}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1259,6 +1260,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335985150}
   m_CullTransparentMesh: 1
+--- !u!114 &335985155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335985150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74504fae0f1414c81b2ff310c575015a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 978386710}
+  levelText: {fileID: 1275652475}
+  nameInputField: {fileID: 1918957873}
 --- !u!1 &405864895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,6 +1837,10 @@ PrefabInstance:
     - target: {fileID: 4903789816461388248, guid: d25866f9ce37e36489d86683a7958d41, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984984135218245648, guid: d25866f9ce37e36489d86683a7958d41, type: 3}
+      propertyPath: level
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8984984135218245648, guid: d25866f9ce37e36489d86683a7958d41, type: 3}
       propertyPath: player
@@ -2796,7 +2816,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1882628135}
-  - {fileID: 335985151}
   m_Father: {fileID: 1425477025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5281,6 +5300,7 @@ RectTransform:
   - {fileID: 1383155879}
   - {fileID: 491597697}
   - {fileID: 1151861700}
+  - {fileID: 335985151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

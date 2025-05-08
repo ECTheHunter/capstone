@@ -4,18 +4,13 @@ using TMPro;
 
 public class GameOverPanel : MonoBehaviour
 {
-    public GameObject gameOverPanel;
-    public GameObject highScoresPanel;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI levelText;
     public TMP_InputField nameInputField;
-
     private GameManager gameManager;
 
     private void Start()
     {
-        gameOverPanel.SetActive(false);
-        highScoresPanel.SetActive(false);
 
         gameManager = GameManager.Instance;
     }
@@ -24,11 +19,8 @@ public class GameOverPanel : MonoBehaviour
     {
         if (gameManager != null)
         {
-            Debug.Log($"Health Value: {gameManager.healthvalue}");
-            if (gameManager.healthvalue <= 0)
-            {
-                
-            }
+            scoreText.text = "Max Score: " + gameManager.playerscore;
+            levelText.text = "Max Level: " + gameManager.level;
         }
     }
 
