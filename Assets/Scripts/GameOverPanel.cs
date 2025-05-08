@@ -44,9 +44,18 @@ public class GameOverPanel : MonoBehaviour
     }
     public void SaveData()
     {
+        string userInput = nameInputField.text.Trim();
+
+    // Check if input is empty
+    if (string.IsNullOrEmpty(userInput))
+    {
+        Debug.LogError("InputField is empty. Please enter a value before saving.");
+        return;
+    }
+
         SaveData newEntry = new SaveData
         {
-            username = nameInputField.text,
+            username = userInput,
             score = gameManager.playerscore,
             level = gameManager.level,
         };
