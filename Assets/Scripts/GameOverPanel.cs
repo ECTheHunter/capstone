@@ -82,6 +82,7 @@ public class GameOverPanel : MonoBehaviour
         File.WriteAllText(filePath, newJson);
 
         Debug.Log($"Data appended and saved to {filePath}\n{newJson}");
+        SceneManager.LoadScene(0);
     }
 
 }
