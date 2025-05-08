@@ -54,10 +54,10 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 2539fe1a0f6f8b241b0bc2cf22f6f540, type: 3}
   shotgunFiredClip: {fileID: 8300000, guid: 1f30cf2fb89ebff4c8055dc50bea46ab, type: 3}
   machinegunFiredClip: {fileID: 8300000, guid: 859a367672a133443a4bbade4456352f, type: 3}
-  blackholeFiredClip: {fileID: 0}
+  blackholeFiredClip: {fileID: 8300000, guid: b7638fcaafc45504681806d43817f5e2, type: 3}
   bouncingDestroyedClip: {fileID: 8300000, guid: b63d71b5c1cff384e8ce413efa81fff1, type: 3}
-  l_rDestroyedClip: {fileID: 0}
-  chomperDestroyedClip: {fileID: 0}
+  l_rDestroyedClip: {fileID: 8300000, guid: 9679eef4a1d004940bd5daee0d161cf7, type: 3}
+  chomperDestroyedClip: {fileID: 8300000, guid: 424d6a3e9a018934f809beccc84e8f7f, type: 3}
 --- !u!82 &4842398000685793460
 AudioSource:
   m_ObjectHideFlags: 0
