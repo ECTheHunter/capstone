@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ffa98bb0d6ed9f488c6577203378e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthvalue: 100
+  healthvalue: 10
   player: {fileID: 0}
   pistoldamage: 1
   machinegundamage: 0.5
@@ -65,3 +65,6 @@ MonoBehaviour:
   blackholeammo: 0
   doubledamagemodifier: 0
   doubleDamageDuration: 5
+  playerscore: 0
+  level: 0
+  enemycount: 0

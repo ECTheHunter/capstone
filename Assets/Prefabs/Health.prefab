@@ -207,7 +207,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
+  m_FillClockwise: 0
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
@@ -382,6 +382,7 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   healthText: {fileID: 6952903860991534588}
+  gameOverPanel: {fileID: 0}
 --- !u!50 &1002875372524776440
 Rigidbody2D:
   serializedVersion: 5
