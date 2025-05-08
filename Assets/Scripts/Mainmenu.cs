@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Mainmenu : MonoBehaviour
 {
+    public GameObject scorepanel;
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -13,5 +14,13 @@ public class Mainmenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void OpenScore()
+    {
+        scorepanel.SetActive(true);
+    }
+    public void CloseScore()
+    {
+        scorepanel.SetActive(false);
     }
 }
