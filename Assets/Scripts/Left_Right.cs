@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class Left_Right : MonoBehaviour
 {
-    [SerializeField] private bool directionleft;
+    public bool directionleft;
     [SerializeField] private float speed;
     [SerializeField] private float shootrate;
     [SerializeField] private GameObject projectile;
     [SerializeField] private Animator animator;
+    public bool l_r;
+    [SerializeField] private bool inscene;
     private float nextShootTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -19,15 +21,30 @@ public class Left_Right : MonoBehaviour
     void Update()
     {
         Vector3 dir = Vector3.zero;
-        if (directionleft)
+        if (l_r)
         {
-            dir = Vector2.left * speed * Time.deltaTime;
+            if (directionleft)
+            {
+                dir = transform.right * -1 * speed * Time.deltaTime;
+            }
+            else
+            {
+                dir = transform.right * speed * Time.deltaTime;
+            }
+            transform.Translate(dir);
         }
         else
         {
-            dir = Vector2.right * speed * Time.deltaTime;
+            if (directionleft)
+            {
+                dir = transform.up * speed * Time.deltaTime;
+            }
+            else
+            {
+                dir = transform.up * -1 * speed * Time.deltaTime;
+            }
+            transform.Translate(dir);
         }
-        transform.Translate(dir);
         if (Time.time >= nextShootTime)
         {
             animator.SetTrigger("Shoot");
@@ -41,8 +58,14 @@ public class Left_Right : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "Border")
         {
+            if (!inscene)
+            {
+                inscene = true;
+                return;
+            }
             directionleft = !directionleft;
         }
     }

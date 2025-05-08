@@ -8,6 +8,7 @@ public class RegularEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Health>().DoDamage(GetComponent<EnemyValues>().damage);
+            GameManager.Instance.enemycount--;
             Destroy(gameObject);
         }
     }

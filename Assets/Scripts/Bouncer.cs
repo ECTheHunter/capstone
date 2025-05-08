@@ -8,21 +8,48 @@ public class Bouncer : MonoBehaviour
     private Rigidbody2D rb2D;
     [SerializeField] private float splitfactor;
     private Vector2 direction;
-    [SerializeField] private bool cansplit = false;
     [SerializeField] private GameObject bouncerPrefab;
     [SerializeField] private Transform spawnpoint1;
     [SerializeField] private bool isminion;
-    [SerializeField] private float detectiondistance;
     [SerializeField] private float minumumscale;
+    public bool isvertical;
+    public bool directionleft;
+    private float spawnTime;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        spawnTime = Time.time;
         if (!isminion)
         {
             float angleOffset = Random.Range(-30f, 30f); // Random offset within -45 to 45 degrees
-            direction = Quaternion.Euler(0, 0, angleOffset) * transform.up * -1; // Use transform.right as the base direction
-            direction = direction.normalized;
+            if (isvertical)
+            {
+                if (!directionleft)
+                {
+                    direction = Quaternion.Euler(0, 0, angleOffset) * transform.up * -1; // Use transform.right as the base direction
+                    direction = direction.normalized;
+                }
+                else
+                {
+                    direction = Quaternion.Euler(0, 0, angleOffset) * transform.up; // Use transform.right as the base direction
+                    direction = direction.normalized;
+                }
+            }
+            else
+            {
+                if (directionleft)
+                {
+                    direction = Quaternion.Euler(0, 0, angleOffset) * transform.right * -1; // Use transform.right as the base direction
+                    direction = direction.normalized;
+                }
+                else
+                {
+                    direction = Quaternion.Euler(0, 0, angleOffset) * transform.right; // Use transform.right as the base direction
+                    direction = direction.normalized;
+                }
+            }
+
         }
 
         Physics2D.IgnoreLayerCollision(7, 6);
@@ -34,23 +61,6 @@ public class Bouncer : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle + 90f, Vector3.forward);
 
-        int ignoreEnemyLayer = ~LayerMask.GetMask("Enemy");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectiondistance, ignoreEnemyLayer);
-
-        Debug.DrawRay(transform.position, direction);
-        if (hit.collider == null)
-        {
-            cansplit = false;
-        }
-        if (hit.collider != null && hit.collider.tag == "Border")
-        {
-            cansplit = true;
-        }
-        else
-        {
-            cansplit = false;
-        }
-
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -61,6 +71,13 @@ public class Bouncer : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Corner")
+        {
+            Vector2 toCenter = (new Vector2(500f, 250f) - rb2D.position).normalized;
+            direction = toCenter;
+            return;
+
+        }
         if (collision.tag == "Border")
         {
             if (!enteredscene)
@@ -70,21 +87,13 @@ public class Bouncer : MonoBehaviour
             }
             else if (enteredscene)
             {
-                if (!cansplit)
-                {
-                    return;
-                }
-                else if (cansplit)
-                {
-                    var firstcontact = collision.ClosestPoint(transform.position);
-                    var collisionNormal = ((Vector2)transform.position - firstcontact).normalized;
-                    Vector2 newVelocity = Vector2.Reflect(rb2D.linearVelocity.normalized, collisionNormal).normalized;
-                    direction = newVelocity;
-                    if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude)
-                        StartCoroutine(BounceOperation());
-                }
 
-
+                var firstcontact = collision.ClosestPoint(transform.position);
+                var collisionNormal = ((Vector2)transform.position - firstcontact).normalized;
+                Vector2 newVelocity = Vector2.Reflect(rb2D.linearVelocity.normalized, collisionNormal).normalized;
+                direction = newVelocity;
+                if (transform.localScale.magnitude > new Vector3(minumumscale, minumumscale, minumumscale).magnitude && Time.time - spawnTime >= 1f)
+                    StartCoroutine(BounceOperation());
             }
         }
 
@@ -99,10 +108,6 @@ public class Bouncer : MonoBehaviour
     }
     IEnumerator BounceOperation()
     {
-        while (cansplit)
-        {
-            yield return null;
-        }
 
         GameObject newBouncer1 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
         GameObject newBouncer2 = Instantiate(bouncerPrefab, (Vector2)spawnpoint1.position, Quaternion.identity);
@@ -122,8 +127,18 @@ public class Bouncer : MonoBehaviour
         enemyValues2.damage = GetComponent<EnemyValues>().damage * splitfactor;
 
         // Set the direction of the new bouncers within -45 to 45 degrees
-        float angle1 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-30f, 30f);
-        float angle2 = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + Random.Range(-30f, 30f);
+        float angleOffset1 = Random.Range(10f, 45f);
+        float angleOffset2;
+
+        do
+        {
+            angleOffset2 = Random.Range(-10f, 30f);
+        } while (Mathf.Abs(angleOffset2 - angleOffset1) < 15f);
+
+        float baseAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle1 = baseAngle + angleOffset1;
+        float angle2 = baseAngle + angleOffset2;
+
         bouncerScript1.isminion = true;
         bouncerScript2.isminion = true;
         bouncerScript1.SetDirection(new Vector2(Mathf.Cos(angle1 * Mathf.Deg2Rad), Mathf.Sin(angle1 * Mathf.Deg2Rad)).normalized);

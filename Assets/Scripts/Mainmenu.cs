@@ -5,13 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class Mainmenu : MonoBehaviour
 {
+    public GameObject scorepanel;
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void OpenScore()
+    {
+        scorepanel.SetActive(true);
+    }
+    public void CloseScore()
+    {
+        scorepanel.SetActive(false);
     }
 }

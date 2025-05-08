@@ -185,6 +185,7 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
   animator: {fileID: 377720274896304370}
   enemyscore: 3
+  cost: 1
 --- !u!114 &4267551159312490458
 MonoBehaviour:
   m_ObjectHideFlags: 0
