@@ -36,6 +36,6 @@ public class GunPanels : MonoBehaviour
     public void SelectBlackhole()
     {
         GameManager.Instance.weaponmode = (int)GameManager.WEAPONMODE.BlackHolemode;
-        Debug.Log("Shotgun silahı seçildi.");
+        Debug.Log("Blackhole silahı seçildi.");
     }
 }
