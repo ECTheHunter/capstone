@@ -62,7 +62,7 @@ MonoBehaviour:
   doubledamage: {fileID: 5758876792652276952, guid: aa5ea3928d3851b41a4133f2c676af1d, type: 3}
   shotgunammo: 0
   machinegunammo: 0
-  blackholeammo: 5
+  blackholeammo: 0
   doubledamagemodifier: 0
   doubleDamageDuration: 5
   playerscore: 0
