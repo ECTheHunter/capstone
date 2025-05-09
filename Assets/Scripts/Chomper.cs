@@ -12,7 +12,7 @@ public class Chomper : MonoBehaviour
         }
     }
 
-    private void OnCollisonExit2D(Collision2D collision2D)
+    private void OnCollisionExit2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.tag == "Player")
         {
