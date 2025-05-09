@@ -38,8 +38,8 @@ public class GameOverPanel : MonoBehaviour
     {
         if (gameManager != null)
         {
-            scoreText.text = "Max Score: " + gameManager.playerscore;
-            levelText.text = "Max Level: " + gameManager.level;
+            scoreText.text = " " + gameManager.playerscore;
+            levelText.text = " " + gameManager.level;
         }
     }
     public void SaveData()

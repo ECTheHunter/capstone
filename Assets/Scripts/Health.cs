@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
     }
     public void Die()
     {
-        if (isDead) return; // Eğer zaten öldüyse, tekrar çalıştırma
+        if (isDead) return;
         isDead = true;
 
         Debug.Log("Player has died.");
