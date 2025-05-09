@@ -10,7 +10,7 @@ public class Level : MonoBehaviour
     {
         if (levelText != null && GameManager.Instance != null)
         {
-            levelText.text = "Level: " + GameManager.Instance.level;
+            levelText.text = " " + GameManager.Instance.level;
         }
     }
 }
