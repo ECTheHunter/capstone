@@ -66,5 +66,5 @@ MonoBehaviour:
   doubledamagemodifier: 0
   doubleDamageDuration: 5
   playerscore: 0
-  level: 1
+  level: 0
   enemycount: 0
