@@ -194,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735458426962332001, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 498
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4735458426962332001, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1173,7 +1173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &335985151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3229,7 +3229,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3442273424303929756, guid: 46aa54ea98f57944facc298a5a0965c6, type: 3}
+  m_Sprite: {fileID: -4627874047666434002, guid: 293d3cc67aab09644ae833dce6ae1fa0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
