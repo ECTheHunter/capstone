@@ -84,11 +84,9 @@ MonoBehaviour:
   enteredscene: 0
   movespeed: 350
   splitfactor: 0.85
-  cansplit: 0
   bouncerPrefab: {fileID: 4913959121887310431}
   spawnpoint1: {fileID: 706512735265388796}
   isminion: 0
-  detectiondistance: 2
   minumumscale: 3.75
   isvertical: 0
   directionleft: 0
@@ -243,7 +241,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -6603227825665973648, guid: 70ace00e71f40774685873ebe1e3b432, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.18988562, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
