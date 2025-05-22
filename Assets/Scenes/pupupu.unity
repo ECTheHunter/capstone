@@ -188,6 +188,74 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 335985150}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.ctime0
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.ctime1
+      value: 32768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.ctime3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key0.g
+      value: 0.9549705
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key1.g
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key1.r
+      value: 0.9121155
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key2.b
+      value: 0.068752214
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key2.g
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key2.r
+      value: 0.2384918
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key3.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key3.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.key3.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139034818423194595, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      propertyPath: colorGradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4282420332710012247, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -931,7 +999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.30131912, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12735,7 +12803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.69241047, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

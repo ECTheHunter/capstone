@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 public class InputHandler : MonoBehaviour
@@ -7,6 +8,20 @@ public class InputHandler : MonoBehaviour
     private float machineguntimestamp;
     private float shotguntimestamp;
     private float blackholetimestamp;
+    public string signaltype = "";
+    public static InputHandler Instance { get; private set; }
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Update()
     
     {
@@ -25,11 +40,11 @@ public class InputHandler : MonoBehaviour
                     SoundManager.Instance.PlaySound(SoundManager.Instance.pistolFiredClip);
                     pistoltimestamp = Time.time + GameManager.Instance.pistolfirerate;
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, combinedMask);
-                    if (hit.collider.gameObject.tag == "Enemy")
+                    if (hit.collider != null && hit.collider.gameObject.tag == "Enemy" && hit.collider.gameObject.GetComponent<EnemyValues>().signalType == signaltype)
                     {
                         hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.doubledamagemodifier ? GameManager.Instance.pistoldamage * 2 : GameManager.Instance.pistoldamage);
                     }
-                    else if (hit.collider.gameObject.tag == "PickUp")
+                    else if (hit.collider != null && hit.collider.gameObject.tag == "PickUp")
                     {
                         hit.collider.gameObject.GetComponent<PickUpClass>().pickUpEffect();
                     }
@@ -63,11 +78,11 @@ public class InputHandler : MonoBehaviour
                         Debug.DrawLine(shootPosition, shootPosition + Vector2.right * 0.1f, Color.red, 0.5f);
 
                         RaycastHit2D hit = Physics2D.Raycast(shootPosition, Vector2.zero, Mathf.Infinity, combinedMask);
-                        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy")
+                        if (hit.collider != null && hit.collider.gameObject.tag == "Enemy" && hit.collider.gameObject.GetComponent<EnemyValues>().signalType == signaltype)
                         {
                             hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.doubledamagemodifier ? GameManager.Instance.shotgundamage * 2 : GameManager.Instance.shotgundamage);
                         }
-                        else if (hit.collider.gameObject.tag == "PickUp")
+                        else if (hit.collider != null && hit.collider.gameObject.tag == "PickUp")
                         {
                             hit.collider.gameObject.GetComponent<PickUpClass>().pickUpEffect();
                         }
@@ -86,11 +101,11 @@ public class InputHandler : MonoBehaviour
                     machineguntimestamp = Time.time + GameManager.Instance.machinegunfirerate;
                     GameManager.Instance.machinegunammo -= 1;
                     RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, combinedMask);
-                    if (hit.collider.gameObject.tag == "Enemy")
+                    if (hit.collider != null && hit.collider.gameObject.tag == "Enemy" && hit.collider.gameObject.GetComponent<EnemyValues>().signalType == signaltype)
                     {
                         hit.collider.gameObject.GetComponent<EnemyValues>().EatDamage(GameManager.Instance.doubledamagemodifier ? GameManager.Instance.machinegundamage * 2 : GameManager.Instance.machinegundamage);
                     }
-                    else if (hit.collider.gameObject.tag == "PickUp")
+                    else if (hit.collider != null && hit.collider.gameObject.tag == "PickUp")
                     {
                         hit.collider.gameObject.GetComponent<PickUpClass>().pickUpEffect();
                     }

@@ -138,6 +138,7 @@ MonoBehaviour:
   animator: {fileID: 5994469770969200243}
   enemyscore: 1
   cost: 1
+  signalType: 1
 --- !u!58 &297381150118564354
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -245,6 +245,7 @@ MonoBehaviour:
   animator: {fileID: 2601081176988371920}
   enemyscore: 2
   cost: 2
+  signalType: 2
 --- !u!95 &2601081176988371920
 Animator:
   serializedVersion: 7
