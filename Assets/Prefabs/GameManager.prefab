@@ -46,16 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthvalue: 100
   player: {fileID: 0}
-  pistoldamage: 1
-  machinegundamage: 0.5
-  shotgundamage: 2
+  pistoldamage: 1.1
+  machinegundamage: 0.6
+  shotgundamage: 2.25
   weaponmode: 0
-  machinegunfirerate: 0.1
-  pistolfirerate: 0.65
-  shotgunfirerate: 1.35
+  machinegunfirerate: 0.15
+  pistolfirerate: 0.75
+  shotgunfirerate: 1.5
   blackholefirerate: 1
   shotgunpellets: 12
-  shotgunspread: 0.45
+  shotgunspread: 0.5
   blackholeinstance: {fileID: 8350653574753604084, guid: 76d183778c813fc49b12d3f2ed5c96c8, type: 3}
   healthpickup: {fileID: 6996289769472307816, guid: d996da14248be844e98d2c5d023b43bf, type: 3}
   ammopickup: {fileID: 8305783697267056749, guid: 7bbd4bd23025ca54ca588acb4f2ecc96, type: 3}

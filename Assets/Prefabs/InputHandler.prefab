@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6139042593915714777}
   - component: {fileID: 8430406438713732949}
+  - component: {fileID: 4387080667680056250}
   m_Layer: 0
   m_Name: InputHandler
   m_TagString: Untagged
@@ -44,3 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd87d464b0caee64abd6f2a197b8ff1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  signaltype: 
+--- !u!114 &4387080667680056250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903940589943245596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841e6d0c61cc9104aa54e046ce0ab630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectionPort: 25001
