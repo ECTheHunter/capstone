@@ -4,6 +4,14 @@ using System.Text;
 using UnityEngine;
 using System.Threading;
 
+[System.Serializable]
+public class LaserData
+{
+    public string laserType;
+    public float x;
+    public float y;
+}
+
 public class TCP_Connection : MonoBehaviour
 {
     Thread thread;
@@ -67,23 +75,18 @@ public class TCP_Connection : MonoBehaviour
     {
         Debug.Log($"Received: {dataString}");
 
-        // Remove leading/trailing whitespace
-        dataString = dataString.Trim();
-
-        // Split the elements by space
-        string[] parts = dataString.Split(' ');
-
-        if (parts.Length < 3)
+        try
         {
-            Debug.LogWarning("Invalid data received: " + dataString);
-            return ("");
+            LaserData data = JsonUtility.FromJson<LaserData>(dataString);
+            return data.laserType;
         }
-
-
-        string signal = parts[2];
-
-        return signal;
+        catch (System.Exception ex)
+        {
+            Debug.LogWarning("Failed to parse JSON: " + ex.Message);
+            return "";
+        }
     }
+
 
     // Position is the data being received in this example
 
