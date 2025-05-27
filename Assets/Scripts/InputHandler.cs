@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class InputHandler : MonoBehaviour
     private float shotguntimestamp;
     private float blackholetimestamp;
     public string signaltype = "";
+    [SerializeField] private TextMeshProUGUI lazertypetext;
     public static InputHandler Instance { get; private set; }
     void Awake()
     {
@@ -23,9 +25,9 @@ public class InputHandler : MonoBehaviour
         }
     }
     void Update()
-    
-    {
 
+    {
+        lazertypetext.text = "LASER TYPE: " + signaltype;
         LayerMask enemyLayer = LayerMask.GetMask("Enemy");
         LayerMask pickupLayer = LayerMask.GetMask("PickUp");
         LayerMask combinedMask = enemyLayer | pickupLayer;

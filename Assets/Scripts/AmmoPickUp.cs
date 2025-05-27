@@ -19,21 +19,23 @@ public class AmmoPickUp : PickUpClass
             case "SHOTGUN_16":
                 GameManager.Instance.shotgunammo += 16;
                 break;
-            case "MACHINEGUN_60+SHOTGUN_8":
-                GameManager.Instance.machinegunammo += 60;
-                GameManager.Instance.shotgunammo += 8;
-                break;
-            case "MACHINEGUN_120+SHOTGUN_16":
-                GameManager.Instance.machinegunammo += 120;
-                GameManager.Instance.shotgunammo += 16;
-                break;
             case "MACHINEGUN_60+SHOTGUN_8+BLACKHOLE_1":
                 GameManager.Instance.blackholeammo += 1;
-                GameManager.Instance.shotgunammo += 8;
                 GameManager.Instance.machinegunammo += 60;
+                GameManager.Instance.shotgunammo += 8;
                 break;
             case "MACHINEGUN_120+SHOTGUN_16+BLACKHOLE_1":
                 GameManager.Instance.blackholeammo += 1;
+                GameManager.Instance.machinegunammo += 120;
+                GameManager.Instance.shotgunammo += 16;
+                break;
+            case "MACHINEGUN_60+SHOTGUN_8+BLACKHOLE_3":
+                GameManager.Instance.blackholeammo += 3;
+                GameManager.Instance.shotgunammo += 8;
+                GameManager.Instance.machinegunammo += 60;
+                break;
+            case "MACHINEGUN_120+SHOTGUN_16+BLACKHOLE_3":
+                GameManager.Instance.blackholeammo += 3;
                 GameManager.Instance.shotgunammo += 16;
                 GameManager.Instance.machinegunammo += 120;
                 break;

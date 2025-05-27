@@ -56,19 +56,19 @@ public class EnemyValues : MonoBehaviour
 
         GameObject prefabToSpawn = null;
 
-        if (randomValue > 1 && randomValue < 40)
+        if (randomValue > 1 && randomValue < 20)
         {
             prefabToSpawn = null;
         }
-        else if (randomValue > 40 && randomValue < 65)
+        else if (randomValue > 20 && randomValue < 45)
         {
             prefabToSpawn = GameManager.Instance.healthpickup;
         }
-        else if (randomValue > 65 && randomValue < 90)
+        else if (randomValue > 45 && randomValue < 85)
         {
             prefabToSpawn = GameManager.Instance.ammopickup;
         }
-        else if (randomValue > 90 && randomValue < 101)
+        else if (randomValue > 85 && randomValue < 101)
         {
             prefabToSpawn = GameManager.Instance.doubledamage;
 

@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: 1
   health: 3
-  damage: 3
+  damage: 4
   spriteRenderer: {fileID: 5813505185155215524}
   originalMaterial: {fileID: 0}
   flashMaterial: {fileID: 2100000, guid: b14f043f7efdae446a1c4a646f807970, type: 2}
