@@ -46,9 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthvalue: 100
   player: {fileID: 0}
-  pistoldamage: 1.1
-  machinegundamage: 0.6
-  shotgundamage: 2.25
+  pistoldamage: 1.35
+  machinegundamage: 0.65
+  shotgundamage: 2.35
   weaponmode: 0
   machinegunfirerate: 0.15
   pistolfirerate: 0.75
@@ -64,7 +64,7 @@ MonoBehaviour:
   machinegunammo: 0
   blackholeammo: 0
   doubledamagemodifier: 0
-  doubleDamageDuration: 5
+  doubleDamageDuration: 8
   playerscore: 0
   level: 0
   enemycount: 0

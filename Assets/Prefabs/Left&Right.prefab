@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionleft: 0
-  speed: 2
-  shootrate: 4
+  speed: 1.3
+  shootrate: 3
   projectile: {fileID: 195038184093328019, guid: 776b878f3a29aca429ac73ad2d15bade, type: 3}
   animator: {fileID: 3011420908258626026}
   l_r: 0

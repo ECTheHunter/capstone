@@ -7,7 +7,7 @@ using System.Threading;
 [System.Serializable]
 public class LaserData
 {
-    public string laserType;
+    public int laserType;
     public float x;
     public float y;
 }
@@ -78,7 +78,7 @@ public class TCP_Connection : MonoBehaviour
         try
         {
             LaserData data = JsonUtility.FromJson<LaserData>(dataString);
-            return data.laserType;
+            return data.laserType.ToString();
         }
         catch (System.Exception ex)
         {

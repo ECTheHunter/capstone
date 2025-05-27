@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enteredscene: 0
-  movespeed: 350
+  movespeed: 275
   splitfactor: 0.85
   bouncerPrefab: {fileID: 4913959121887310431}
   spawnpoint1: {fileID: 706512735265388796}
