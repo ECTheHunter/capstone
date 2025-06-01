@@ -300,10 +300,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8233647150777067037, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4282420332710012247, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1690631326}
   m_SourcePrefab: {fileID: 100100000, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
 --- !u!1 &56027137
 GameObject:
@@ -1769,6 +1773,26 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1690631325}
+    - target: {fileID: 8984984135218245648, guid: d25866f9ce37e36489d86683a7958d41, type: 3}
+      propertyPath: pistoldamage
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984984135218245648, guid: d25866f9ce37e36489d86683a7958d41, type: 3}
+      propertyPath: shotgundamage
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984984135218245648, guid: d25866f9ce37e36489d86683a7958d41, type: 3}
+      propertyPath: pistolfirerate
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984984135218245648, guid: d25866f9ce37e36489d86683a7958d41, type: 3}
+      propertyPath: shotgunfirerate
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984984135218245648, guid: d25866f9ce37e36489d86683a7958d41, type: 3}
+      propertyPath: machinegundamage
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11710,6 +11734,52 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4282420332710012247, guid: 2514ec4c3f4c3eb4087097f81fa9aa1f, type: 3}
   m_PrefabInstance: {fileID: 52300605}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1690631326
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690631325}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.45, y: 0.45}
+  m_EdgeRadius: 0
 --- !u!1 &1705705589
 GameObject:
   m_ObjectHideFlags: 0
