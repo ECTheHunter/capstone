@@ -21,7 +21,6 @@ public class EnemyValues : MonoBehaviour
     public Animator animator;
     public int enemyscore;
     public float cost;
-    public string signalType;
     void Awake()
     {
         originalMaterial = spriteRenderer.material;
